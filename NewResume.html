@@ -8,30 +8,7 @@
   	<link rel="stylesheet" type="text/css" media="all" href="css/font-awesome.min.css">
 	<link rel="shortcut icon" href="img/favicon.png">
 	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	<script type="text/javascript">
-	$(function(){
-	  $('#sidemenu a').on('click', function(e){
-	    e.preventDefault();
-
-	    if($(this).hasClass('open')) {
-	      // do nothing because the link is already open
-	    } 
-	    else {
-	      var oldcontent = $('#sidemenu a.open').attr('href');
-	      var newcontent = $(this).attr('href');
-	      
-	      $(oldcontent).fadeOut('fast', function(){
-	        $(newcontent).fadeIn().removeClass('hidden');
-	        $(oldcontent).addClass('hidden');
-	      });
-	      
-	     
-	      $('#sidemenu a').removeClass('open');
-	      $(this).addClass('open');
-	    }
-	  });
-	});
-	</script>
+	<script type="text/javascript" src="js/newresume.js"></script>
 </head>
 <body>
 	<header>
@@ -70,6 +47,7 @@
 				</li>
 			</ul>
 		</section><!-- @end #sidemenu -->
+		
 		<section id="form">
 			<div id="basic-form" class="formblock">
 				<h4>Basic Information</h4>	
