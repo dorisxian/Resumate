@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Resumate</title>
+	<link rel="stylesheet" type="text/css" media="all" href="css/style.css">
+	<link rel="stylesheet" type="text/css" media="all" href="css/newresume.css">
+  	<link rel="stylesheet" type="text/css" media="all" href="css/font-awesome.min.css">
+	<link rel="shortcut icon" href="img/favicon.png">
+	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript">
+	$(function(){
+	  $('#sidemenu a').on('click', function(e){
+	    e.preventDefault();
+
+	    if($(this).hasClass('open')) {
+	      // do nothing because the link is already open
+	    } 
+	    else {
+	      var oldcontent = $('#sidemenu a.open').attr('href');
+	      var newcontent = $(this).attr('href');
+	      
+	      $(oldcontent).fadeOut('fast', function(){
+	        $(newcontent).fadeIn().removeClass('hidden');
+	        $(oldcontent).addClass('hidden');
+	      });
+	      
+	     
+	      $('#sidemenu a').removeClass('open');
+	      $(this).addClass('open');
+	    }
+	  });
+	});
+	</script>
+</head>
+<body>
+	<header>
+		<img id="logo" src="img/logo.png" alt="">
+		<h1>Resumate</h1>
+	</header>
+
+	<nav>
+		<ul>
+			<li><a href="#new"><span class="icon"><img src="img/add.png" alt=""></span>New Resume</a></li>
+			<li><a href="#user"><span class="icon"><img src="img/user.png" alt=""></span>Login / Signup</a></li>
+			<li><a href="#contact"><span class="icon"><img src="img/message.png" alt=""></span>Contact Us</a></li>
+		</ul>
+	</nav>
+
+	<section id="canvas">
+		<section id="sidemenu">
+			<ul>
+				<li class="active">
+					<a href="#basic-form" class="open"><i class="fa fa-user fa-fw"></i>Basic Information</a>
+				</li>
+
+				<li>
+					<a href="#profile-form"><i class="fa fa-star fa-fw"></i>Profile / Objective</a>
+				</li>
+
+				<li>
+					<a href="#education-form"><i class="fa fa-book fa-fw"></i>Eduction</a>
+				</li>
+
+				<li>
+					<a href="#work-form"><i class="fa fa-suitcase fa-fw"></i>Work Experience</a>
+				</li>
+				<li>
+					<a href="#skill-form"><i class=" fa fa-th-list fa-fw"></i>Skills</a>
+				</li>
+			</ul>
+		</section><!-- @end #sidemenu -->
+		<section id="form">
+			<div id="basic-form" class="formblock">
+				<h4>Basic Information</h4>	
+			</div>
+			<div id="profile-form" class="formblock hidden">
+				<h4>Profile Information</h4>	
+			</div>
+			<div id="education-form" class="formblock hidden">
+				<h4>Eduction Information</h4>	
+			</div>
+			<div id="work-form" class="formblock hidden">
+				<h4>Work Information</h4>	
+			</div>
+			<div id="skill-form" class="formblock hidden">
+				<h4>Skills</h4>	
+			</div>
+		</section><!-- @end #form -->
+	</section><!-- @end #canvas -->
+	
+	<footer>
+		<p>Resumate © 2013. All Rights Reserved.</p>
+	</footer>
+
+</body>
+</html>

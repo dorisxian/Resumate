@@ -1,0 +1,64 @@
+/* New Resume Page */
+
+/*Tab Side Menu*/
+#sidemenu ul{
+	margin: 0;
+	padding: 0;
+	width: 200px;
+	float: left;
+	background: white;
+	border-right: 1px solid #c9c9c9;
+	z-index: 0;
+}
+
+#sidemenu ul li {
+	list-style-type: none;
+}
+
+#sidemenu ul li a {
+	color: #6C6C6C;
+	text-decoration: none;
+	font-size: 15px;
+	line-height: 38px;
+	display: block;
+	padding: 0 15px;
+	transition: all 0.15s;
+}
+
+#sidemenu ul li a:hover {
+	
+	border-left: 6px solid #F9615F;
+}
+#sidemenu i{
+	margin-right: 10px;
+}
+/* @end Tab Side Menu*/
+
+/*Form Content*/
+#form {
+	position: relative;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	-moz-box-shadow: 0 0 8px #C9C9C9;
+	-webkit-box-shadow: 0 0 8px #C9C9C9;
+	box-shadow: 0 0 8px #C9C9C9;
+	margin-top: -20px;
+	display: block;
+	background: white;
+	padding: 0px 30px;
+	margin-left: 180px;
+	min-height: 300px;
+	z-index: 1;
+}
+.formblock {
+  display: block;
+  padding: 15px 20px;
+}
+
+.formblock.hidden {
+  display: none;
+}
+
+/* @end Form Content*/
+
+/* @end New Resume Page */

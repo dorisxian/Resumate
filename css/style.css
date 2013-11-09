@@ -1,0 +1,97 @@
+body{
+	font-family: "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", "Helvetica", "Arial", sans-serif; 
+	font-weight:400;
+	min-width: 768px;
+	margin: 0;
+	padding: 0;
+	color: #575757;
+}
+/*font settings*/
+h1, footer{
+	font-family: "HelveticaNeueThin", "HelveticaNeue-Thin", "Helvetica Neue Thin", "HelveticaNeue", "Helvetica Neue", "Helvetica", "Arial", sans-serif; 
+	font-weight: 200; 
+}
+nav, #sidemenu{
+	font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma","Arial", sans-serif; 
+	font-weight: 300;
+}
+header{
+	position: relative;
+	height: 80px;
+}
+h1{
+	font-size: 42px;
+	padding-left: 150px;
+	padding-bottom: 4px;
+	background-color: #EEEEEE;
+	color: #6C6C6C;
+	position: relative;
+	left: 0;
+	right: 0;
+	top: 23px;
+}
+#logo{
+	width: 102px;
+	position: absolute;
+	left: 30px;
+	top: 0;
+	z-index: 1;
+}
+nav{
+	float: right;
+	font-size: 21px;
+}
+nav ul{
+	margin-top: 0;
+	text-align: center;
+}
+nav li{
+	padding: 8px 28px; 
+	display: inline-block;
+}
+nav li:hover{
+	border-bottom: 4px solid;
+	color: #F9615F;
+}
+nav a{
+	color: #A1A1A1;
+	text-decoration: none;
+}
+.icon img{
+	width: 21px;
+	margin-right: 12px;
+	vertical-align: -2px;
+}
+#canvas{
+	background-color: #76D6FF;
+	position: relative;
+	top: 60px;
+	min-height: 300px;
+	padding: 60px 50px;
+	height: auto;
+}
+#main{
+	background-color: white;
+	-webkit-border-radius: 8px;
+  	border-radius: 8px;
+  	padding: 30px;
+  	margin: 0 8%;
+  	min-height: 250px;
+}
+
+footer{
+	position: relative;
+	top: 80px;
+	right: 0;
+	left: 0;
+	height: 50px;
+}
+footer p{
+	background-color: #707070;
+	color: white;
+	line-height: 28px;
+	font-size: 13px;
+	letter-spacing: 0.5px;
+	text-align: right;
+	padding-right: 1%;
+}
