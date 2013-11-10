@@ -2,7 +2,6 @@
 
 /*Tab Side Menu*/
 #sidemenu ul{
-	margin: 0;
 	padding: 0;
 	width: 200px;
 	float: left;
@@ -48,21 +47,50 @@
 	-moz-box-shadow: 0 0 8px #C9C9C9;
 	-webkit-box-shadow: 0 0 8px #C9C9C9;
 	box-shadow: 0 0 8px #C9C9C9;
-	margin-top: -20px;
+	margin-top: -15px;
 	display: block;
 	background: white;
 	padding: 0px 30px;
 	margin-left: 190px;
 	min-height: 300px;
 	z-index: 1;
+	font-size: 15px;
 }
 .formblock {
 	display: block;
-	padding: 15px 20px;
+	padding: 20px 30px;
 }
-
 .formblock.hidden {
 	display: none;
+}
+#form input{
+	padding: 5px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	font-size: 13px;
+	margin-left: 15px;
+	width: 60%;
+	max-width: 350px;
+	outline: none;
+}
+#form p{
+	margin: 7px;
+}
+label{
+	width: 20%;
+	min-width: 100px;
+	text-align: right;
+	float: left;
+	line-height: 23px;
+	padding: 5px 0;
+}
+
+.focusField{
+    background: #EFF5FF;
+    border: 2px solid #FF7569;
+}
+.idleField{
+	border: 2px solid #ccc;
 }
 
 /* @end Form Content*/

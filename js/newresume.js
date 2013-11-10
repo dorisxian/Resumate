@@ -1,4 +1,10 @@
-$(function(){
+$(document).ready(function() {
+
+  $(document).on('click', "#sidemenu a", function() {
+    $('.active').removeClass('active');
+    $(this).addClass('active');
+  });
+
   $('#sidemenu a').on('click', function(e){
     e.preventDefault();
 
@@ -17,9 +23,15 @@ $(function(){
       $(this).addClass('open');
     }
   });
-});
 
-$(document).on('click', "#sidemenu a", function() {
-  $('.active').removeClass('active');
-  $(this).addClass('active');
+  $('input[type="text"]').addClass("idleField");
+  $('input[type="text"]').focus(function() {
+      $(this).data('holder',$(this).attr('placeholder'));
+      $(this).removeClass("idleField").addClass("focusField");
+      $(this).attr('placeholder','');
+  });
+  $('input[type="text"]').blur(function() {
+      $(this).removeClass("focusField").addClass("idleField");
+      $(this).attr('placeholder',$(this).data('holder'));
+  });
 });
