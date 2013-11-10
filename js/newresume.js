@@ -4,7 +4,7 @@ $(function(){
 
     if($(this).hasClass('open')) {}
     else {
-      var oldcontent = $('#sidemenu a.open').attr('href');
+      var oldcontent = $('#sidemenu li a.open').attr('href');
       var newcontent = $(this).attr('href');
       
       $(oldcontent).fadeOut('fast', function(){
@@ -17,4 +17,9 @@ $(function(){
       $(this).addClass('open');
     }
   });
+});
+
+$(document).on('click', "#sidemenu a", function() {
+  $('.active').removeClass('active');
+  $(this).addClass('active');
 });

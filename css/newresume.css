@@ -15,6 +15,11 @@
 	list-style-type: none;
 }
 
+#sidemenu li a.active{
+	background-color: #F9615F;
+	color: white;
+}
+
 #sidemenu ul li a {
 	color: #6C6C6C;
 	text-decoration: none;
@@ -25,13 +30,14 @@
 	transition: all 0.15s;
 }
 
-#sidemenu ul li a:hover {
-	
+#sidemenu ul li a:not(.open):hover {
 	border-left: 6px solid #F9615F;
 }
+
 #sidemenu i{
 	margin-right: 10px;
 }
+
 /* @end Tab Side Menu*/
 
 /*Form Content*/
@@ -46,17 +52,17 @@
 	display: block;
 	background: white;
 	padding: 0px 30px;
-	margin-left: 180px;
+	margin-left: 190px;
 	min-height: 300px;
 	z-index: 1;
 }
 .formblock {
-  display: block;
-  padding: 15px 20px;
+	display: block;
+	padding: 15px 20px;
 }
 
 .formblock.hidden {
-  display: none;
+	display: none;
 }
 
 /* @end Form Content*/
