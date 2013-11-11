@@ -18,19 +18,18 @@ $(document).ready(function() {
         $(oldcontent).addClass('hidden');
       });
       
-     
       $('#sidemenu a').removeClass('open');
       $(this).addClass('open');
     }
   });
 
-  $('input[type="text"]').addClass("idleField");
-  $('input[type="text"]').focus(function() {
+  $('input:not([type=image],[type=button],[type=submit])').addClass("idleField");
+  $('input:not([type=image],[type=button],[type=submit])').focus(function() {
       $(this).data('holder',$(this).attr('placeholder'));
       $(this).removeClass("idleField").addClass("focusField");
       $(this).attr('placeholder','');
   });
-  $('input[type="text"]').blur(function() {
+  $('input:not([type=image],[type=button],[type=submit])').blur(function() {
       $(this).removeClass("focusField").addClass("idleField");
       $(this).attr('placeholder',$(this).data('holder'));
   });

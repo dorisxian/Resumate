@@ -52,6 +52,7 @@ nav li{
 nav li:hover{
 	border-bottom: 4px solid;
 	color: #F9615F;
+	margin-bottom: -4px;
 }
 nav a{
 	color: #A1A1A1;
@@ -59,6 +60,7 @@ nav a{
 }
 .icon img{
 	width: 21px;
+	height: auto;
 	margin-right: 12px;
 	vertical-align: -2px;
 }

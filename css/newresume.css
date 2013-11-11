@@ -85,6 +85,26 @@ label{
 	padding: 5px 0;
 }
 
+@media (max-width: 700px){
+	label{
+		width: 100%;
+		float: none;
+	}
+	#form input{
+		width: 95%;
+		margin-left: 0;
+	}
+
+}
+/*input[type=text]:focus,
+input[type=email]:focus,
+input[type=url]:focus,
+input[type=password]:focus,
+textarea:focus {
+	background: #EFF5FF;
+	border: 2px solid #FF7569;
+}
+*/
 .focusField{
     background: #EFF5FF;
     border: 2px solid #FF7569;
