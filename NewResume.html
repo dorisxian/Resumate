@@ -83,14 +83,30 @@
 				<h4>Work Information</h4>	
 				<input type="button" id="addWork" value="Add Work" />
 				<div class="ed_fields">
-					<p><label>Company Name</label><input type="text" name="type" placeholder="Enter Company Name"></p>
-					<p><label>Position Held</label><input type="text" name="position" placeholder="Enter position held"></p>
-					<p><label>Starting and Ending Dates</label><input type="text" name="date" placeholder="Enter the starting and ending date you held position"></p>
+					<p><label>Company</label><input type="text" name="type" placeholder="Enter Company Name"></p>
+					<p><label>Job Title</label><input type="text" name="position" placeholder="Enter position held"></p>
+					<p><label>Starting Date</label><label for="mydropdown" Starting Date:</label><select name="mydropdown">
+						<option value="September">September</option>
+						<option value="October">October</option>
+						<option value="November">November</option>
+						<option value="December">December</option>
+						<option value="January">January</option>
+						<option value="February">February</option>
+						<option value="March">March</option>
+						<option value="April">April</option>
+						<option value="May">May</option>
+						<option value="June">June</option>
+						<option value="July">July</option>
+						<option value="August">August</option>
+						</select>
+					<p><label>Ending Date</label><label for="mydropdown" name="date2" placeholder="Enter the ending date you held position"></p>
 					<p><label>City</label><input type="text" name="city" placeholder="Enter the city you worked in"></p>
-					<p><label>Industry Type</label><input type="text" name="industry" placeholder="Enter the type of industry company is listed under"></p>
-					<p><label>Job Description</label><input type="text" name="description" placeholder="Enter the job description"></p>
-					<p><label>Honors/Work Achievements</label><input type="text" name="wka" placeholder="Enter achievements earned while at work"></p>
-				</div>	
+					<p><label>Industry</label><input type="text" name="industry" placeholder="Enter the type of industry company is listed under"></p>
+					<p><label>Description</label><input type="text" name="description" placeholder="Enter the job description"></p>
+				<input type="radio" name="workhere" value="workhere" /> I currently work here <br>
+				<input type="button" id="Work" value="Delete Work" />
+				<input type="button" id="Work" value="Add Work" />
+				</div>
 			</form>
 			<form id="skill-form" class="formblock hidden">
 				<h4>Skills</h4>	
