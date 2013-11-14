@@ -33,10 +33,13 @@ $(document).ready(function() {
       $(this).removeClass("focusField").addClass("idleField");
       $(this).attr('placeholder',$(this).data('holder'));
   });
+
   $('#addSchool').click(function(e) {
-    $("#education-form").append('<br>');
     $("#education-form").append($("#education-form div.ed_fields:eq(0)").clone(true));
+    $("#education-form").append($("#addSchool").clone(true));
+    $("#education-form").append('<input type="button" id="deleteSchool" value="Delete School" />');
     $("#education-form div.ed_fields").eq(-1).find("ed_fields").val('');
     e.preventDefault();
-  })
+  });
+
 });
