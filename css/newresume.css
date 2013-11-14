@@ -70,28 +70,29 @@
 	font-size: 13px;
 	margin-left: 15px;
 	width: 60%;
-	max-width: 350px;
+	max-width: 380px;
 	outline: none;
 }
 #form p{
 	margin: 7px;
 }
 label{
-	width: 20%;
-	min-width: 100px;
+	width: 32%;
 	text-align: right;
 	float: left;
 	line-height: 23px;
 	padding: 5px 0;
 }
 
-@media (max-width: 700px){
+@media (max-width: 920px){
 	label{
 		width: 100%;
+		display: block;
 		float: none;
+		text-align: left;
 	}
 	#form input{
-		width: 95%;
+		width: 90%;
 		margin-left: 0;
 	}
 
