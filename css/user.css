@@ -2,32 +2,46 @@
 #canvas{
 	background-color: #B0E36C;
 }
-#register{
-	width: 38%;
+#user{
+	overflow: hidden;
+	min-width: 350px;
+	padding-left: 37%;
+	text-align: center;
+}
+@media (max-width: 800px){
+	#user{
+		padding-left: 17%;
+	}
+}
+#register,#login{
 	-webkit-border-radius: 8px;
 	border-radius: 8px;
 	-moz-box-shadow: 0 0 8px #C9C9C9;
 	-webkit-box-shadow: 0 0 8px #C9C9C9;
 	box-shadow: 0 0 8px #C9C9C9;
-	margin-top: -15px;
-	margin-left: 20px;
 	background: white;
-	padding: 20px;
+	padding: 25px 35px;
+	vertical-align: top;
+	float: left;
+}
+.hidden {
+	display: none;
 }
 h2{
-	font-size: 30px;
+	font-size: 35px;
 	color: #9B9B9B;
 	margin: 0;
 }
 input{
-	padding: 10px;
+	padding: 8px;
 	font-size: 20px;
 	margin-left: 10px;
-	outline: none;
+	margin-right: 1px;
 	border: none;
 	font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma","Arial", sans-serif; 
 	font-weight: 300;
 }
+
 ::-webkit-input-placeholder { /* WebKit browsers */
     color: #C8C8C8;
 }
@@ -40,15 +54,65 @@ input{
 :-ms-input-placeholder { /* Internet Explorer 10+ */
     color: #C8C8C8;
 }
-.fa{
+/*icon*/
+.fa-fw{
 	font-size: 25px;
 	margin-left: 10px;
 	color: #9B9B9B;
 }
-#register p{
+p:not(.change_link):not(footer){
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
 	border: 1px #C9C9C9 solid;
+	background-color: #F4F4F4;
+}
+.change_link{
+	text-align: right;
+	margin-top: 28px;
+}
+.change_link a{
+	color: #24BBC2;
+	margin-left: 10px;
+	font-size: 18px;
+	text-decoration: none;
+	border: 1px #24BBC2 solid;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	padding: 5px 7px;
+}
+.change_link .fa{
+	margin-right: 6px;
+}
+.change_link a:hover{
+	color: white;
+	background-color: #24BBC2;
+}
+input[type=submit]{
+	color: white;
+	background-color: #FF7569;
+	margin: auto;
+	text-align: center;
+	padding: 10px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	width: 100%;
+	font-size: 25px;
+}
+input[type=submit]:focus{
+	outline: none;
+}
+input[type=submit]:hover{
+	background-color: #24BBC2;
+	cursor: pointer;
+}
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=password]:focus,
+textarea:focus {
+	background: #F3FBE9;
+	outline-color: #FF7569;
+	outline-style: solid;
+	outline-width: 2px;
 }
 
 /* @end User Page */

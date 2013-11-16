@@ -32,7 +32,7 @@
 		</section><!-- @end #sidemenu -->
 		
 		<section id="form">
-			<form id="basic-form" class="formblock" action="newresume.php" method="post">
+			<form id="basic-form" class="formblock" action="" method="post">
 				<p><label>First Name</label><input type="text" name="fname" placeholder="Enter First Name"></p>
 				<p><label>Last Name</label><input type="text" name="lname" placeholder="Enter Last Name"></p>
 				<p><label>Address Line 1</label><input type="text" name="address1" placeholder="Enter Address Line 1"></p>

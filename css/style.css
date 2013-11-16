@@ -7,11 +7,11 @@ body{
 	color: #575757;
 }
 /*font settings*/
-h1, footer, #register h2{
+h1, footer, .subtitle, .thin{
 	font-family: "HelveticaNeueThin", "HelveticaNeue-Thin", "Helvetica Neue Thin", "HelveticaNeue", "Helvetica Neue", "Helvetica", "Arial", sans-serif; 
 	font-weight: 200; 
 }
-nav, #sidemenu{
+nav, #sidemenu, .light{
 	font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma","Arial", sans-serif; 
 	font-weight: 300;
 }
