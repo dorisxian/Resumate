@@ -7,7 +7,7 @@ body{
 	color: #575757;
 }
 /*font settings*/
-h1, footer{
+h1, footer, #register h2{
 	font-family: "HelveticaNeueThin", "HelveticaNeue-Thin", "Helvetica Neue Thin", "HelveticaNeue", "Helvetica Neue", "Helvetica", "Arial", sans-serif; 
 	font-weight: 200; 
 }

@@ -1,28 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>Resumate</title>
-	<link rel="stylesheet" type="text/css" media="all" href="css/style.css">
+	<?php include('head.php'); ?>
 	<link rel="stylesheet" type="text/css" media="all" href="css/newresume.css">
-  	<link rel="stylesheet" type="text/css" media="all" href="css/font-awesome.min.css">
-	<link rel="shortcut icon" href="img/favicon.png">
-	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-	<script type="text/javascript" src="js/newresume.js"></script>
 </head>
 <body>
-	<header>
-		<img id="logo" src="img/logo.png" alt="">
-		<h1>Resumate</h1>
-	</header>
-
-	<nav>
-		<ul>
-			<li><a href="#new"><span class="icon"><img src="img/add.png" alt=""></span>New Resume</a></li>
-			<li><a href="#user"><span class="icon"><img src="img/user.png" alt=""></span>Login / Signup</a></li>
-			<li><a href="#contact"><span class="icon"><img src="img/message.png" alt=""></span>Contact Us</a></li>
-		</ul>
-	</nav>
+	<?php include('header.php'); ?>
 
 	<section id="canvas">
 		<section id="sidemenu">
@@ -115,7 +98,6 @@
 					<p><label>Interests</label><input type="text" name="interests" placeholder="Enter your interests and hobbies"></p>
 					<p><label>Groups and Organizations</label><input type="text" name="groups" placeholder="Enter the organizations you are involved in"></p>
 					<p><label>Languages</label><input type="text" name="languages" placeholder="Enter the languages you speak"></p>
-					
 				</div>	
 			</form>
 		</section><!-- @end #form -->

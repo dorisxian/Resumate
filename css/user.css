@@ -1,0 +1,54 @@
+/* User Page */
+#canvas{
+	background-color: #B0E36C;
+}
+#register{
+	width: 38%;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	-moz-box-shadow: 0 0 8px #C9C9C9;
+	-webkit-box-shadow: 0 0 8px #C9C9C9;
+	box-shadow: 0 0 8px #C9C9C9;
+	margin-top: -15px;
+	margin-left: 20px;
+	background: white;
+	padding: 20px;
+}
+h2{
+	font-size: 30px;
+	color: #9B9B9B;
+	margin: 0;
+}
+input{
+	padding: 10px;
+	font-size: 20px;
+	margin-left: 10px;
+	outline: none;
+	border: none;
+	font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma","Arial", sans-serif; 
+	font-weight: 300;
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: #C8C8C8;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #C8C8C8;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #C8C8C8;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #C8C8C8;
+}
+.fa{
+	font-size: 25px;
+	margin-left: 10px;
+	color: #9B9B9B;
+}
+#register p{
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	border: 1px #C9C9C9 solid;
+}
+
+/* @end User Page */
