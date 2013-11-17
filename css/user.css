@@ -60,11 +60,12 @@ input{
 	margin-left: 10px;
 	color: #9B9B9B;
 }
-p:not(.change_link):not(footer){
+div{
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
 	border: 1px #C9C9C9 solid;
 	background-color: #F4F4F4;
+	margin: 15px 0;
 }
 .change_link{
 	text-align: right;

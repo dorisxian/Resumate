@@ -34,6 +34,12 @@ $(document).ready(function() {
       $(this).attr('placeholder',$(this).data('holder'));
   });
 
+  $( "#startDatepicker, #endDatepicker" ).datepicker({
+    changeMonth: true,
+    changeYear: true,
+    dateFormat: 'MM yy'
+  });
+
   $('#addSchool').click(function(e) {
     $("#education-form").append($("#education-form div.ed_fields:eq(0)").clone(true));
     $("#education-form").append($("#addSchool").clone(true));

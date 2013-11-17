@@ -66,7 +66,7 @@
 .formblock.hidden {
 	display: none;
 }
-#form input{
+#form input, select{
 	padding: 5px;
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
@@ -75,6 +75,15 @@
 	width: 60%;
 	max-width: 380px;
 	outline: none;
+}
+select{
+	background-color: white;
+	-webkit-appearance: none;
+	-moz-appearance: button;
+	color: #A9A9A9;
+}
+.selected{
+	color: black;
 }
 #form p{
 	margin: 7px;
@@ -94,7 +103,7 @@ label{
 		float: none;
 		text-align: left;
 	}
-	#form input{
+	#form input,select{
 		width: 90%;
 		margin-left: 0;
 	}
@@ -113,10 +122,12 @@ textarea:focus {
     background: #EFF5FF;
     border: 2px solid #FF7569;
 }
-.idleField{
+.idleField, select{
 	border: 2px solid #ccc;
 }
-
+div.ui-datepicker{ 
+	font-size: 13px;
+}
 /* @end Form Content*/
 
 /* @end New Resume Page */
