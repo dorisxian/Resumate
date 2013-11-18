@@ -66,60 +66,63 @@
 .formblock.hidden {
 	display: none;
 }
-#form input, select{
+#form input, textarea, select{
 	padding: 5px;
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
 	font-size: 13px;
+	font-family: "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", "Helvetica", "Arial", sans-serif; 
+	font-weight: 400;
 	margin-left: 15px;
-	width: 60%;
-	max-width: 380px;
 	outline: none;
+	width: 370px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+textarea{
+	min-height: 120px;
+	resize: vertical;
+}
+@-moz-document url-prefix() {
+    input, textarea, select{
+    	font-size: 13px;
+    	font-family: inherit;
+    }
 }
 select{
 	background-color: white;
 	-webkit-appearance: none;
-	-moz-appearance: button;
-	color: #A9A9A9;
+	-moz-appearance: none;
+	color: black;
 }
 .selected{
-	color: black;
+	color: #A9A9A9;
 }
 #form p{
 	margin: 7px;
 }
 label{
-	width: 32%;
+	width: 170px;
 	text-align: right;
 	float: left;
 	line-height: 23px;
 	padding: 5px 0;
 }
-
-@media (max-width: 920px){
+@media (max-width: 1000px){
 	label{
 		width: 100%;
 		display: block;
 		float: none;
 		text-align: left;
 	}
-	#form input,select{
-		width: 90%;
+	#form input, textarea, select{
+		width: 95%;
 		margin-left: 0;
 	}
-
 }
-/*input[type=text]:focus,
-input[type=email]:focus,
-input[type=url]:focus,
-input[type=password]:focus,
-textarea:focus {
-	background: #EFF5FF;
-	border: 2px solid #FF7569;
-}
-*/
 .focusField{
-    background: #EFF5FF;
+    background: #E7F7FF;
     border: 2px solid #FF7569;
 }
 .idleField, select{

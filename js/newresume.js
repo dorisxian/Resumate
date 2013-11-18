@@ -23,18 +23,18 @@ $(document).ready(function() {
     }
   });
 
-  $('input:not([type=image],[type=button],[type=submit])').addClass("idleField");
-  $('input:not([type=image],[type=button],[type=submit])').focus(function() {
+  $('input:not([type=image],[type=button],[type=submit]),textarea').addClass("idleField");
+  $('input:not([type=image],[type=button],[type=submit]),textarea').focus(function() {
       $(this).data('holder',$(this).attr('placeholder'));
       $(this).removeClass("idleField").addClass("focusField");
       $(this).attr('placeholder','');
   });
-  $('input:not([type=image],[type=button],[type=submit])').blur(function() {
+  $('input:not([type=image],[type=button],[type=submit]),textarea').blur(function() {
       $(this).removeClass("focusField").addClass("idleField");
       $(this).attr('placeholder',$(this).data('holder'));
   });
 
-  $( "#startDatepicker, #endDatepicker" ).datepicker({
+  $("#startDatepicker,#endDatepicker").datepicker({
     changeMonth: true,
     changeYear: true,
     dateFormat: 'MM yy'

@@ -50,11 +50,11 @@
 				<p><label>Zip Code</label><input type="text" name="zip" placeholder="Enter Zip Code"></p>
 				<p><label>Phone</label><input type="tel" name="phone" placeholder="Enter Phone"></p>
 				<p><label>Email</label><input type="email" name="email" placeholder="Enter Email"></p>
-				<p><label>Website</label><input type="url" name="website" placeholder="Enter Website"></p>
+				<p><label>Website</label><input type="url" name="website" placeholder="Enter Website URL"></p>
 			</form>
 			<form id="profile-form" class="formblock hidden">
 				<p><label>Objective Statement</label><input type="text" name="obj" placeholder="Enter objective statement"></p>
-				<p><label>Profile</label><input type="text" name="profile" placeholder="Enter profile"></p>	
+				<p><label>Profile</label><textarea id="profile" name="profile" placeholder="Enter profile"></textarea></p>	
 			</form>
 			<form id="education-form" class="formblock hidden">
 				<div class="ed_fields">
@@ -84,8 +84,8 @@
 				<div class="ed_fields">
 					<p><label>Company</label><input type="text" name="type" placeholder="Enter Company Name"></p>
 					<p><label>Job Title</label><input type="text" name="position" placeholder="Enter position held"></p>
-					<p><label>Start Date</label><input type="text" id="startDatepicker"/></p>
-    				<p><label>End Date</label><input type="text" id="endDatepicker"/></p>
+					<p><label>Start Date</label><input type="text" id="startDatepicker" placeholder="Enter start date"/></p>
+    				<p><label>End Date</label><input type="text" id="endDatepicker" placeholder="Enter end date"/></p>
 					<p><label>City</label><input type="text" name="city" placeholder="Enter the city you worked in"></p>
 					<p><label>Description</label><input type="text" name="description" placeholder="Enter the job description"></p>
 				<input type="radio" name="workhere" value="workhere" /> I currently work here <br>
