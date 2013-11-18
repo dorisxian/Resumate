@@ -81,7 +81,7 @@
 			<form id="work-form" class="formblock hidden">
 				<h4>Work Information</h4>	
 				<input type="button" id="addWork" value="Add Work" />
-				<div class="ed_fields">
+				<div class="w_fields">
 					<p><label>Company</label><input type="text" name="type" placeholder="Enter Company Name"></p>
 					<p><label>Job Title</label><input type="text" name="position" placeholder="Enter position held"></p>
 					<p><label>Start Date</label><input type="text" id="startDatepicker" placeholder="Enter start date"/></p>
