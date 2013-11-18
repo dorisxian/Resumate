@@ -89,8 +89,8 @@
 					<p><label>City</label><input type="text" name="city" placeholder="Enter the city you worked in"></p>
 					<p><label>Description</label><input type="text" name="description" placeholder="Enter the job description"></p>
 				<input type="radio" name="workhere" value="workhere" /> I currently work here <br>
-				<input type="button" id="Work" value="Delete Work" />
-				<input type="button" id="Work" value="Add Work" />
+				<input type="button" id="delWork" value="Delete Work" />
+				<input type="button" id="addWork" value="Add Work" />
 				</div>
 			</form>
 			<form id="skill-form" class="formblock hidden">
