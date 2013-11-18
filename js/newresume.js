@@ -47,5 +47,13 @@ $(document).ready(function() {
     $("#education-form div.ed_fields").eq(-1).find("ed_fields").val('');
     e.preventDefault();
   });
+  
+  $('#addWork').click(function(w) {
+    $("#work-form").append($("#work-form div.w_fields:eq(0)").clone(true));
+    $("#work-form").append($("#addWork").clone(true));
+    $("#work-form").append('<input type="button" id="delwork" value="Delete Work" />');
+    $("#work-form div.w_fields").eq(-1).find("w_fields").val('');
+    w.preventDefault();
+  });
 
 });
