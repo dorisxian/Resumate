@@ -50,7 +50,6 @@ $(document).ready(function() {
     $("#education-form div.ed_fields").eq(-1).find("input[type=text], textarea").val('');
     $("#addSchool").remove();
     $("#deleteSchool").remove();
-    i++;
     e.preventDefault();
   });
 
