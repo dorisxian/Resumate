@@ -20,8 +20,11 @@
 			$err = "User added";
 			$insert = $dbconn->prepare("INSERT users (email, pword, salt) VALUES (:email, :pass, :salt);");
 			$insert->execute(array(':email'=>$user, ':pass' => $pass, ':salt'=>$salt));
-			$_SESSION['email'] = $user['email'];
-			$_SESSION['uid'] = $user['uid'];
+			$_SESSION['email'] = $_POST['email'];
+            $select = $dbconn->prepare("SELECT users (uid) WHERE user =:user;");
+            $select->execute(array(':user'=>$user));
+            $uid = $select->fetch();
+			$_SESSION['uid'] = $_POST['uid'];
 			return true;
 		}
 	}
