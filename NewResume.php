@@ -89,7 +89,7 @@
 					<p><label>City</label><input type="text" name="city" placeholder="Enter the city you worked in"></p>
 					<p><label>Description</label><input type="text" name="description" placeholder="Enter the job description"></p>
 				<input type="radio" name="workhere" value="workhere" /> I currently work here <br>
-				<input type="button" id="delWork" value="Delete Work" />
+				<input type="button" id="deleteWork" value="Delete Work" />
 				<input type="button" id="addWork" value="Add Work" />
 				</div>
 			</form>
@@ -102,7 +102,7 @@
 			<form id="addl-form" class="formblock hidden">
 				<h4>Additional Information</h4>	
 				<input type="button" id="addl" value="Add MoreInfo" />
-				<div class="ed_fields">
+				<div class="w_fields">
 					<p><label>Website URL</label><input type="text" name="website" placeholder="If relevant, enter your website URL"></p>
 					<p><label>Interests</label><input type="text" name="interests" placeholder="Enter your interests and hobbies"></p>
 					<p><label>Groups and Organizations</label><input type="text" name="groups" placeholder="Enter the organizations you are involved in"></p>

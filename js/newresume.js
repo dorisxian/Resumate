@@ -40,20 +40,42 @@ $(document).ready(function() {
     dateFormat: 'MM yy'
   });
 
+ $('#deleteSchool').hide(); 
+
   $('#addSchool').click(function(e) {
+    $("#deleteSchool").show();
     $("#education-form").append($("#education-form div.ed_fields:eq(0)").clone(true));
     $("#education-form").append($("#addSchool").clone(true));
-    $("#education-form").append('<input type="button" id="deleteSchool" value="Delete School" />');
-    $("#education-form div.ed_fields").eq(-1).find("ed_fields").val('');
+    $("#education-form").append($("#deleteSchool").clone(true));
+    $("#education-form div.ed_fields").eq(-1).find("input[type=text], textarea").val('');
+    $("#addSchool").remove();
+    $("#deleteSchool").remove();
     e.preventDefault();
   });
+
+  $('#deleteSchool').click(function() {
+    $("#education-form div.ed_fields:last").remove();
+    $("#deleteSchool").hide();
+  });
   
+  
+$('#deleteWork').hide(); 
   $('#addWork').click(function(w) {
+    $("#deleteWork").show();
     $("#work-form").append($("#work-form div.w_fields:eq(0)").clone(true));
     $("#work-form").append($("#addWork").clone(true));
-    $("#work-form").append('<input type="button" id="delwork" value="Delete Work" />');
-    $("#work-form div.w_fields").eq(-1).find("w_fields").val('');
+    $("#work-form").append($("#deleteWork").clone(true));
+    $("#work-form div.w_fields").eq(-1).find("input[type=text], textarea").val('');
+    $("#addWork").remove();
+    $("#deleteWork").remove();
     w.preventDefault();
   });
+
+  $('#deleteWork').click(function() {
+    $("#work-form div.w_fields:last").remove();
+    $("#deleteWork").hide();
+  });
+  
+  
 
 });
