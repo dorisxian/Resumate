@@ -55,11 +55,7 @@
 				<input type="submit" name="login" value="Sign In" class="thin"/>
 				<p class="change_link">Not a member yet?<a href="#register" class="toregister light"><i class="fa fa-plus-circle"></i>Join us</a></p>
 			</form>
-<<<<<<< HEAD
 			<form id="register" class="hidden" action="User.php" method="post" onsubmit="return validate();">
-=======
-			<form id="register" class="hidden" action="User.php" method="post">
->>>>>>> origin/master
 				<h2 class="subtitle">Register</h2>
 				<p id="errorMessage"></p>
 				<div><i class="fa fa-envelope fa-fw"></i><input type="email" name="email" placeholder="Email" required></div>
