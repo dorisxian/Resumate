@@ -5,12 +5,14 @@
 		$err = '';
 		if (isset($_POST['login']) && $_POST['login'] == 'Sign In') {
 			include('php/login.php');
+            login();
 			if(login()) {
 				//redirect the user to landing page
 			}
 		}
 		if (isset($_POST['register']) && $_POST['register'] == 'Signup') {
 			include('php/register.php');
+            register();
 			if(register()){
 				//redirect the user to landing page
 			}
