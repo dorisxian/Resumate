@@ -32,7 +32,7 @@ if(isset($_POST['email'])) {
 		<section id="contact">
 			<form action="" method="post" action="SendMessage.php">
 				<p><input name="name" type="text" placeholder="Name"></p>
-			    <p><input name="email" type="email" placeholder="<?php echo $email; ?>" required></p>
+			    <p><input name="email" type="email" placeholder="Email" required></p>
 			    <p><input name="subject" type="text" placeholder="Subject"></p>
 			    <p><textarea name="message" placeholder="Message" required></textarea></p>
 		        <input id="checkbox_send" type="checkbox">
