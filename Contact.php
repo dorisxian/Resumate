@@ -1,18 +1,25 @@
+<?php
+	session_start();
+	$email = "Email";
+	if(isset($_SESSION['email'])) {
+		$email = $_SESSION['email'];
+	}
+?>
 <!DOCTYPE html>
 <html>
 <head>
-	<?php include('head.php'); ?>
+	<?php include('php/head.php'); ?>
 	<link rel="stylesheet" type="text/css" media="all" href="css/contact.css">
 	<script type="text/javascript" src="js/newresume.js"></script>
 </head>
 <body>
-	<?php include('header.php'); ?>
+	<?php include('php/header.php'); ?>
 
 	<section id="canvas">
 		<section id="contact">
-			<form action="" method="post">
+			<form action="" method="post" action="SendMessage.php">
 				<p><input name="name" type="text" placeholder="Name"></p>
-			    <p><input name="email" type="email" placeholder="Email" required></p>
+			    <p><input name="email" type="email" placeholder="<?php echo $email; ?>" required></p>
 			    <p><input name="subject" type="text" placeholder="Subject"></p>
 			    <p><textarea name="message" placeholder="Message" required></textarea></p>
 		        <input id="checkbox_send" type="checkbox">
