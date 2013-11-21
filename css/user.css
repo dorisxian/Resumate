@@ -24,6 +24,18 @@
 	vertical-align: top;
 	float: left;
 }
+#logout{
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	-moz-box-shadow: 0 0 8px #C9C9C9;
+	-webkit-box-shadow: 0 0 8px #C9C9C9;
+	box-shadow: 0 0 8px #C9C9C9;
+	background: white;
+	padding: 25px 35px;
+	vertical-align: top;
+	float: left;
+    margin: auto;
+}
 .hidden {
 	display: none;
 }
