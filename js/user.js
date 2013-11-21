@@ -23,3 +23,18 @@ $(document).ready(function() {
 		$(this).attr('placeholder',$(this).data('holder'));
 	});
 });
+
+function validate() {
+	if($('[name=password]').val() != $('[name=passwordconfirm]').val()) {
+		$("#errorMessage").text("Passwords do not match");
+		$('[name=password]').val("");
+		$('[name=passwordconfirm]').val("");
+		return false;
+	} if($('[name=password]').val().length < 6) {
+		$("#errorMessage").text("Passwords must be at least 6 characters long");
+		$('[name=password]').val("");
+		$('[name=passwordconfirm]').val("");
+		return false;
+	}
+	return true;
+}
