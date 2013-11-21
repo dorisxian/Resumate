@@ -69,8 +69,8 @@
 							<?php endforeach; ?>
 						</select>
 					</p>
-					<p><label>Start Date</label><input type="text" id="startdatepicker" placeholder="Choose start date (MMYY)"/></p>
-    				<p><label>Guaduation Date</label><input type="text" id="enddatepicker" placeholder="Choose (Estimated) Graduation Date (MMYY)"/></p>
+					<p><label>Start Date</label><input type="text" id="startDatepicker" placeholder="Choose start date (MMYY)"/></p>
+    				<p><label>Guaduation Date</label><input type="text" id="endDatepicker" placeholder="Choose (Estimated) Graduation Date (MMYY)"/></p>
 					<p><label>Major</label><input type="text" name="maj" placeholder="Enter major if applicable"></p>
 					<p><label>Minor</label><input type="text" name="min" placeholder="Enter minor if applicable"></p>
 					<p><label>GPA</label><input type="text" name="gpa" placeholder="Enter GPA"></p>
@@ -84,8 +84,8 @@
 				<div class="w_fields">
 					<p><label>Company</label><input type="text" name="type" placeholder="Enter Company Name"></p>
 					<p><label>Job Title</label><input type="text" name="position" placeholder="Enter position held"></p>
-					<p><label>Start Date</label><input type="text" id="startdatepicker" placeholder="Enter start date"/></p>
-    				<p><label>End Date</label><input type="text" id="enddatepicker" placeholder="Enter end date"/></p>
+					<p><label>Start Date</label><input type="text" id="startDatepicker" placeholder="Enter start date"/></p>
+    				<p><label>End Date</label><input type="text" id="endDatepicker" placeholder="Enter end date"/></p>
 					<p><label>City</label><input type="text" name="city" placeholder="Enter the city you worked in"></p>
 					<p><label>Description</label><input type="text" name="description" placeholder="Enter the job description"></p>
 				<input type="radio" name="workhere" value="workhere" /> I currently work here <br>
