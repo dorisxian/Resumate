@@ -31,10 +31,10 @@
 	-webkit-box-shadow: 0 0 8px #C9C9C9;
 	box-shadow: 0 0 8px #C9C9C9;
 	background: white;
-	padding: 25px 35px;
+	padding: 25px 50px;
 	vertical-align: top;
-	float: left;
-    margin: auto;
+    horizontal-align: top;
+    float: center;
 }
 .hidden {
 	display: none;

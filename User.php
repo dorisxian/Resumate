@@ -10,14 +10,14 @@
 				//redirect the user to landing page
 			}
 		}
-		if (isset($_POST['register']) && $_POST['register'] == 'Signup') {
+		else if (isset($_POST['register']) && $_POST['register'] == 'Signup') {
 			include('php/register.php');
             register();
 			if(register()){
 				//redirect the user to landing page
 			}
 		}
-		if (isset($_SESSION['email']) && isset($_POST['logout']) && $_POST['logout'] == 'Logout') {
+		else if (isset($_SESSION['email']) && isset($_POST['logout']) && $_POST['logout'] == 'Logout') {
 			include('php/logout.php');
 			logout();
 		}
@@ -37,7 +37,6 @@
 	<?php include('php/header.php'); ?>
 
     <?php if (isset($_SESSION['email'])): ?>
-    <h1>Welcome, <?php echo htmlentities($_SESSION['email']) ?></h1>
     <section id="canvas">
 		<section id="user">
             <form id ="logout" class="" action="" method="post">

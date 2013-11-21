@@ -24,9 +24,6 @@ Also, we can customize the header bar once the user logs on, if you guys would l
 
 (Rob)
 Other changes to make:
--check if the email is already registered in the database when registering
--add message display for unmatched password/confirmation
 -header change to "logout" instead of "login/signup" when a user is logged in
--"logout" landing needs some style work (or needs to be replace once header is changed, replaced by Corey's suggestion for a landing page)
 -The Contact Us page requires mail server functionality (need to add it to local machines)
 -add "reply to my email" checkbox
