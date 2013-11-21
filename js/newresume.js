@@ -57,7 +57,9 @@ $(document).ready(function() {
 
   $('#deleteSchool').click(function() {
     $("#education-form div.ed_fields:last").remove();
-    $("#deleteSchool").hide();
+    if ($("#education-form").children("div").length ==1) {
+       $("#deleteSchool").hide();
+    };
   });
   
   
