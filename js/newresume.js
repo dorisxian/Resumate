@@ -58,12 +58,24 @@ $(document).ready(function() {
     $("#deleteSchool").hide();
   });
   
+  
+$('#deleteWork').hide(); 
   $('#addWork').click(function(w) {
+    $("#deleteWork").show();
     $("#work-form").append($("#work-form div.w_fields:eq(0)").clone(true));
     $("#work-form").append($("#addWork").clone(true));
-    $("#work-form").append('<input type="button" id="delwork" value="Delete Work" />');
-    $("#work-form div.w_fields").eq(-1).find("w_fields").val('');
+    $("#work-form").append($("#deleteWork").clone(true));
+    $("#work-form div.w_fields").eq(-1).find("input[type=text], textarea").val('');
+    $("#addWork").remove();
+    $("#deleteWork").remove();
     w.preventDefault();
   });
+
+  $('#deleteWork').click(function() {
+    $("#work-form div.w_fields:last").remove();
+    $("#deleteWork").hide();
+  });
+  
+  
 
 });
