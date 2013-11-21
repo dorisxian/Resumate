@@ -1,12 +1,28 @@
+<?php
+  session_start();
+  
+  // Connect to the database
+  try {
+    $dbname = 'resumate';
+    $user = 'root';
+    $pass = '';
+    $dbconn = new PDO('mysql:host=localhost;dbname='.$dbname, $user, $pass);
+    
+  }
+  catch (Exception $e) {
+    echo "Error: " . $e->getMessage();
+  }
+  
+?>
 <!DOCTYPE html>
 <html>
 <head>
-	<?php include('head.php'); ?>
+	<?php include('php/head.php'); ?>
 	<link rel="stylesheet" type="text/css" media="all" href="css/user.css">
 	<script type="text/javascript" src="js/user.js"></script>
 </head>
 <body>
-	<?php include('header.php'); ?>
+	<?php include('php/header.php'); ?>
 
 	<section id="canvas">
 		<section id="user">

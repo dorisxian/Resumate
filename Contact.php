@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<?php include('head.php'); ?>
+	<?php include('php/head.php'); ?>
 	<link rel="stylesheet" type="text/css" media="all" href="css/contact.css">
 	<script type="text/javascript" src="js/newresume.js"></script>
 </head>
 <body>
-	<?php include('header.php'); ?>
+	<?php include('php/header.php'); ?>
 
 	<section id="canvas">
 		<section id="contact">
