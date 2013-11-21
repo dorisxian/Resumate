@@ -33,6 +33,13 @@ $(document).ready(function() {
       $(this).removeClass("focusField").addClass("idleField");
       $(this).attr('placeholder',$(this).data('holder'));
   });
+  
+  
+   $("#startDatepicker,#endDatepicker").datepicker({
+    changeMonth: true,
+    changeYear: true,
+    dateFormat: 'MM yy'
+  });
 
 
  $('#deleteSchool').hide(); 
@@ -70,34 +77,6 @@ $('#deleteWork').hide();
     $("#work-form div.w_fields:last").remove();
     $("#deleteWork").hide();
   });
-  
-  
-  $(function()
-{
-	$('.date-pick').datePicker()
-	$('#start-date').bind(
-		'dpClosed',
-		function(e, selectedDates)
-		{
-			var d = selectedDates[0];
-			if (d) {
-				d = new Date(d);
-				$('#end-date').dpSetStartDate(d.addDays(1).asString());
-			}
-		}
-	);
-	$('#end-date').bind(
-		'dpClosed',
-		function(e, selectedDates)
-		{
-			var d = selectedDates[0];
-			if (d) {
-				d = new Date(d);
-				$('#start-date').dpSetEndDate(d.addDays(-1).asString());
-			}
-		}
-	);
-});
   
 
 });
