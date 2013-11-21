@@ -88,16 +88,17 @@
 					<p><label>Start Date</label><input type="text" id="startDatepicker" placeholder="Enter start date"/></p>
     				<p><label>End Date</label><input type="text" id="endDatepicker" placeholder="Enter end date"/></p>
 					<p><label>City</label><input type="text" name="city" placeholder="Enter the city you worked in"></p>
-					<p><label>Description</label><input type="text" name="description" placeholder="Enter the job description"></p>
-				<input type="radio" name="workhere" value="workhere" /> I currently work here <br>
+					<p><label>Description</label><input type="textarea" name="description" placeholder="Enter the job description"></p>
+				<input type="radio" name="workhere" value="workhere" />I currently work here <br>
 				<input type="button" id="deleteWork" value="Delete Work" />
 				<input type="button" id="addWork" value="Add Work" />
 				</div>
 			</form>
 			<form id="skill-form" class="formblock hidden">
 				<h4>Skills</h4>	
-				<p><label>Relevant Skills</label><input type="text" name="skills" placeholder="Enter relevant skills"></p>
-				<p><label>Relevant Expertise</label><input type="text" name="expertise" placeholder="Enter your relevant expertise"></p>
+				<li><label>Relevant Skills</label><input type="text" name="skills" placeholder="Enter relevant skills"></li>
+				<li><label>Relevant Expertise</label><input type="text" name="expertise" placeholder="Enter your relevant expertise"></li>
+				<input type="button" id="addSkill" value="Add Skill" />
 			</form>	
 			
 			<form id="addl-form" class="formblock hidden">
