@@ -77,6 +77,7 @@
 					<p><label>Relevant Course Work</label><input type="text" name="courses" placeholder="Enter relevant course work"></p>
 				</div>
 				<input type="button" id="addSchool" value="Add School" />
+				<input type="button" id="deleteSchool" value="Delete School" />
 			</form>
 			<form id="work-form" class="formblock hidden">
 				<h4>Work Information</h4>	
