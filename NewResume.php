@@ -58,23 +58,23 @@
 			</form>
 			<form id="education-form" class="formblock hidden">
 				<div class="ed_fields">
-					<p><label>Name</label><input type="text" name="schoolname" placeholder="Enter name of school"></p>
-					<p><label>City</label><input type="text" name="city" placeholder="Enter the city of school"></p>
+					<p><label>Name</label><input type="text" name="schoolname[]" placeholder="Enter name of school"></p>
+					<p><label>City</label><input type="text" name="schoolcity[]" placeholder="Enter the city of school"></p>
 					<p>
 						<label>Country</label>
-						<select name="schoolcountry" onchange="this.className=this.options[this.selectedIndex].className" class="selected">
+						<select name="schoolcountry[]" onchange="this.className=this.options[this.selectedIndex].className" class="selected">
 							<option value="">Choose the country</option>
 							<?php foreach(get_countries() as $country_key => $country_name): ?>
 								<option value="<?php echo $country_key; ?>"><?php echo $country_name; ?></option>
 							<?php endforeach; ?>
 						</select>
 					</p>
-					<p><label>Start Date</label><input type="text" id="startDatepicker" placeholder="Choose start date (MMYY)"/></p>
-    				<p><label>Guaduation Date</label><input type="text" id="endDatepicker" placeholder="Choose (Estimated) Graduation Date (MMYY)"/></p>
-					<p><label>Major</label><input type="text" name="maj" placeholder="Enter major if applicable"></p>
-					<p><label>Minor</label><input type="text" name="min" placeholder="Enter minor if applicable"></p>
-					<p><label>GPA</label><input type="text" name="gpa" placeholder="Enter GPA"></p>
-					<p><label>Relevant Course Work</label><input type="text" name="courses" placeholder="Enter relevant course work"></p>
+					<p><label>Start Date</label><input name="schoolstartdate[]" type="text" id="startDatepicker" placeholder="Choose start date (MMYY)"/></p>
+    				<p><label>Guaduation Date</label><input name="schoolenddate[] "type="text" id="endDatepicker" placeholder="Choose (Estimated) Graduation Date (MMYY)"/></p>
+					<p><label>Major</label><input type="text" name="maj[]" placeholder="Enter major if applicable"></p>
+					<p><label>Minor</label><input type="text" name="min[]" placeholder="Enter minor if applicable"></p>
+					<p><label>GPA</label><input type="text" name="gpa[]" placeholder="Enter GPA"></p>
+					<p><label>Relevant Course Work</label><input type="text" name="courses[]" placeholder="Enter relevant course work"></p>
 				</div>
 				<input type="button" id="addSchool" value="Add School" />
 				<input type="button" id="deleteSchool" value="Delete School" />
@@ -83,13 +83,13 @@
 				<h4>Work Information</h4>	
 				<input type="button" id="addWork" value="Add Work" />
 				<div class="w_fields">
-					<p><label>Company</label><input type="text" name="type" placeholder="Enter Company Name"></p>
-					<p><label>Job Title</label><input type="text" name="position" placeholder="Enter position held"></p>
-					<p><label>Start Date</label><input type="text" id="startDatepicker" placeholder="Enter start date"/></p>
-    				<p><label>End Date</label><input type="text" id="endDatepicker" placeholder="Enter end date"/></p>
-					<p><label>City</label><input type="text" name="city" placeholder="Enter the city you worked in"></p>
-					<p><label>Description</label><input type="textarea" name="description" placeholder="Enter the job description"></p>
-				<input type="radio" name="workhere" value="workhere" />I currently work here <br>
+					<p><label>Company</label><input type="text" name="type[]" placeholder="Enter Company Name"></p>
+					<p><label>Job Title</label><input type="text" name="position[]" placeholder="Enter position held"></p>
+					<p><label>Start Date</label><input type="text" name="workstartdate[]" id="startDatepicker" placeholder="Enter start date"/></p>
+    				<p><label>End Date</label><input type="text" name="workenddate[]"id="endDatepicker" placeholder="Enter end date"/></p>
+					<p><label>City</label><input type="text" name="workcity[]" placeholder="Enter the city you worked in"></p>
+					<p><label>Description</label><input type="textarea" name="workdescription[]" placeholder="Enter the job description"></p>
+				<input type="radio" name="workhere[]" value="workhere" />I currently work here <br>
 				<input type="button" id="deleteWork" value="Delete Work" />
 				<input type="button" id="addWork" value="Add Work" />
 				</div>
