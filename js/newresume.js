@@ -46,6 +46,7 @@ $(document).ready(function() {
 
   $('#addSchool').click(function(e) {
     $("#deleteSchool").show();
+    $("#education-form").append("<hr>");
     $("#education-form").append($("#education-form div.ed_fields:eq(0)").clone(true));
     $("#education-form").append($("#addSchool").clone(true));
     $("#education-form").append($("#deleteSchool").clone(true));
@@ -57,6 +58,7 @@ $(document).ready(function() {
 
   $('#deleteSchool').click(function() {
     $("#education-form div.ed_fields:last").remove();
+    $("#education-form hr:last").remove();
     if ($("#education-form").children("div").length ==1) {
        $("#deleteSchool").hide();
     };
