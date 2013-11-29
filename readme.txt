@@ -20,11 +20,15 @@ submitted, and I post to resume.php 2, I will be returned the html for that user
 his resumes, in order those resumes were created. My thought process was this would allow use to 
 thumbnail their resumes to allow them to pick one.
 
-What I need: As of now users.php page is structed strangely, I's like all of the forms to be one 
-massive form. I also need a selector where the user picks his id to exist somewhere, please post
-this with a name='rid', and it should all work fine
+I restructed the NewResumes page, it doesnt affect and styling or logic wise. Where should I land
+the uer after they;ve sumbitted the information? I think they're should be a page where user
+can see a list of resumes. Also you'll notice the unsightly number input and submit button at the 
+bottom. Thats for the resume id, and form submission, itll take you into the inner workings of the 
+sight, but that can be fixed easily.
 
-I changed the post methos to be with [] so it returns an array of th objects with identical names,
+
+What I need: 
+I changed the post methods to be with [] so it returns an array of the objects with identical names,
 so I could work with it easier
 
 -------------------------------------------------------------------------------------------------

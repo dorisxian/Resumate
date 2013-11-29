@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,76 +43,80 @@
 		</section><!-- @end #sidemenu -->
 		
 		<section id="form">
-			<form id="basic-form" class="formblock" action="" method="post">
-				<p><label>First Name</label><input type="text" name="fname" placeholder="Enter First Name"></p>
-				<p><label>Last Name</label><input type="text" name="lname" placeholder="Enter Last Name"></p>
-				<p><label>Address Line 1</label><input type="text" name="address1" placeholder="Enter Address Line 1"></p>
-				<p><label>Address Line 2</label><input type="text" name="address2" placeholder="Enter Address Line 2"></p>
-				<p><label>City</label><input type="text" name="city" placeholder="Enter City"></p>
-				<p><label>State</label><input type="text" name="state" placeholder="Enter State"></p>
-				<p><label>Zip Code</label><input type="text" name="zip" placeholder="Enter Zip Code"></p>
-				<p><label>Phone</label><input type="tel" name="phone" placeholder="Enter Phone"></p>
-				<p><label>Email</label><input type="email" name="email" placeholder="Enter Email"></p>
-				<p><label>Website</label><input type="url" name="website" placeholder="Enter Website URL"></p>
-			</form>
-			<form id="profile-form" class="formblock hidden">
-				<p><label>Objective Statement</label><input type="text" name="obj" placeholder="Enter objective statement"></p>
-				<p><label>Profile</label><textarea id="profile" name="profile" placeholder="Enter profile"></textarea></p>	
-			</form>
-			<form id="education-form" class="formblock hidden">
-				<div class="ed_fields">
-					<p><label>Name</label><input type="text" name="schoolname[]" placeholder="Enter name of school"></p>
-					<p><label>City</label><input type="text" name="schoolcity[]" placeholder="Enter the city of school"></p>
-					<p>
-						<label>Country</label>
-						<select name="schoolcountry[]" onchange="this.className=this.options[this.selectedIndex].className" class="selected">
-							<option value="">Choose the country</option>
-							<?php foreach(get_countries() as $country_key => $country_name): ?>
-								<option value="<?php echo $country_key; ?>"><?php echo $country_name; ?></option>
-							<?php endforeach; ?>
-						</select>
-					</p>
-					<p><label>Start Date</label><input name="schoolstartdate[]" type="text" id="startDatepicker" placeholder="Choose start date (MMYY)"/></p>
-    				<p><label>Guaduation Date</label><input name="schoolenddate[] "type="text" id="endDatepicker" placeholder="Choose (Estimated) Graduation Date (MMYY)"/></p>
-					<p><label>Major</label><input type="text" name="maj[]" placeholder="Enter major if applicable"></p>
-					<p><label>Minor</label><input type="text" name="min[]" placeholder="Enter minor if applicable"></p>
-					<p><label>GPA</label><input type="text" name="gpa[]" placeholder="Enter GPA"></p>
-					<p><label>Relevant Course Work</label><input type="text" name="courses[]" placeholder="Enter relevant course work"></p>
+			<form method="POST" action="php/newResume.php">
+				<div id="basic-form" class="formblock">
+					<p><label>First Name</label><input type="text" name="fname" placeholder="Enter First Name"></p>
+					<p><label>Last Name</label><input type="text" name="lname" placeholder="Enter Last Name"></p>
+					<p><label>Address Line 1</label><input type="text" name="address1" placeholder="Enter Address Line 1"></p>
+					<p><label>Address Line 2</label><input type="text" name="address2" placeholder="Enter Address Line 2"></p>
+					<p><label>City</label><input type="text" name="city" placeholder="Enter City"></p>
+					<p><label>State</label><input type="text" name="state" placeholder="Enter State"></p>
+					<p><label>Zip Code</label><input type="text" name="zip" placeholder="Enter Zip Code"></p>
+					<p><label>Phone</label><input type="tel" name="phone" placeholder="Enter Phone"></p>
+					<p><label>Email</label><input type="email" name="email" placeholder="Enter Email"></p>
+					<p><label>Website</label><input type="url" name="website" placeholder="Enter Website URL"></p>
 				</div>
-				<input type="button" id="addSchool" value="Add School" />
-				<input type="button" id="deleteSchool" value="Delete School" />
-			</form>
-			<form id="work-form" class="formblock hidden">
-				<h4>Work Information</h4>	
-				<input type="button" id="addWork" value="Add Work" />
-				<div class="w_fields">
-					<p><label>Company</label><input type="text" name="type[]" placeholder="Enter Company Name"></p>
-					<p><label>Job Title</label><input type="text" name="position[]" placeholder="Enter position held"></p>
-					<p><label>Start Date</label><input type="text" name="workstartdate[]" id="startDatepicker" placeholder="Enter start date"/></p>
-    				<p><label>End Date</label><input type="text" name="workenddate[]"id="endDatepicker" placeholder="Enter end date"/></p>
-					<p><label>City</label><input type="text" name="workcity[]" placeholder="Enter the city you worked in"></p>
-					<p><label>Description</label><input type="textarea" name="workdescription[]" placeholder="Enter the job description"></p>
-				<input type="radio" name="workhere[]" value="workhere" />I currently work here <br>
-				<input type="button" id="deleteWork" value="Delete Work" />
-				<input type="button" id="addWork" value="Add Work" />
+				<div id="profile-form" class="formblock hidden">
+					<p><label>Objective Statement</label><input type="text" name="obj" placeholder="Enter objective statement"></p>
+					<p><label>Profile</label><textarea id="profile" name="profile" placeholder="Enter profile"></textarea></p>	
 				</div>
-			</form>
-			<form id="skill-form" class="formblock hidden">
-				<h4>Skills</h4>	
-				<li><label>Relevant Skills</label><input type="text" name="skills" placeholder="Enter relevant skills"></li>
-				<li><label>Relevant Expertise</label><input type="text" name="expertise" placeholder="Enter your relevant expertise"></li>
-				<input type="button" id="addSkill" value="Add Skill" />
-			</form>	
-			
-			<form id="addl-form" class="formblock hidden">
-				<h4>Additional Information</h4>	
-				<input type="button" id="addl" value="Add MoreInfo" />
-				<div class="w_fields">
-					<p><label>Website URL</label><input type="text" name="website" placeholder="If relevant, enter your website URL"></p>
-					<p><label>Interests</label><input type="text" name="interests" placeholder="Enter your interests and hobbies"></p>
-					<p><label>Groups and Organizations</label><input type="text" name="groups" placeholder="Enter the organizations you are involved in"></p>
-					<p><label>Languages</label><input type="text" name="languages" placeholder="Enter the languages you speak"></p>
+				<div id="education-form" class="formblock hidden">
+					<div class="ed_fields">
+						<p><label>Name</label><input type="text" name="schoolname[]" placeholder="Enter name of school"></p>
+						<p><label>City</label><input type="text" name="schoolcity[]" placeholder="Enter the city of school"></p>
+						<p>
+							<label>Country</label>
+							<select name="schoolcountry[]" onchange="this.className=this.options[this.selectedIndex].className" class="selected">
+								<option value="">Choose the country</option>
+								<?php foreach(get_countries() as $country_key => $country_name): ?>
+									<option value="<?php echo $country_key; ?>"><?php echo $country_name; ?></option>
+								<?php endforeach; ?>
+							</select>
+						</p>
+						<p><label>Start Date</label><input name="schoolstartdate[]" type="text" id="startDatepicker" placeholder="Choose start date (MMYY)"/></p>
+						<p><label>Guaduation Date</label><input name="schoolenddate[] "type="text" id="endDatepicker" placeholder="Choose (Estimated) Graduation Date (MMYY)"/></p>
+						<p><label>Major</label><input type="text" name="maj[]" placeholder="Enter major if applicable"></p>
+						<p><label>Minor</label><input type="text" name="min[]" placeholder="Enter minor if applicable"></p>
+						<p><label>GPA</label><input type="text" name="gpa[]" placeholder="Enter GPA"></p>
+						<p><label>Relevant Course Work</label><input type="text" name="courses[]" placeholder="Enter relevant course work"></p>
+					</div>
+					<input type="button" id="addSchool" value="Add School" />
+					<input type="button" id="deleteSchool" value="Delete School" />
+				</div>
+				<div id="work-form" class="formblock hidden">
+					<h4>Work Information</h4>	
+					<input type="button" id="addWork" value="Add Work" />
+					<div class="w_fields">
+						<p><label>Company</label><input type="text" name="type[]" placeholder="Enter Company Name"></p>
+						<p><label>Job Title</label><input type="text" name="position[]" placeholder="Enter position held"></p>
+						<p><label>Start Date</label><input type="text" name="workstartdate[]" id="startDatepicker" placeholder="Enter start date"/></p>
+						<p><label>End Date</label><input type="text" name="workenddate[]"id="endDatepicker" placeholder="Enter end date"/></p>
+						<p><label>City</label><input type="text" name="workcity[]" placeholder="Enter the city you worked in"></p>
+						<p><label>Description</label><input type="textarea" name="workdescription[]" placeholder="Enter the job description"></p>
+					<input type="radio" name="workhere" value="1" />I currently work here <br>
+					<input type="button" id="deleteWork" value="Delete Work" />
+					<input type="button" id="addWork" value="Add Work" />
+					</div>
+				</div>
+				<div id="skill-form" class="formblock hidden">
+					<h4>Skills</h4>	
+					<li><label>Relevant Skills</label><input type="text" name="skills" placeholder="Enter relevant skills"></li>
+					<li><label>Relevant Expertise</label><input type="text" name="expertise" placeholder="Enter your relevant expertise"></li>
+					<input type="button" id="addSkill" value="Add Skill" />
 				</div>	
+				
+				<div id="addl-form" class="formblock hidden">
+					<h4>Additional Information</h4>	
+					<input type="button" id="addl" value="Add MoreInfo" />
+					<div class="w_fields">
+						<p><label>Website URL</label><input type="text" name="website" placeholder="If relevant, enter your website URL"></p>
+						<p><label>Interests</label><input type="text" name="interests" placeholder="Enter your interests and hobbies"></p>
+						<p><label>Groups and Organizations</label><input type="text" name="groups" placeholder="Enter the organizations you are involved in"></p>
+						<p><label>Languages</label><input type="text" name="languages" placeholder="Enter the languages you speak"></p>
+					</div>	
+				</div>
+				<input type="number" name="rid" value="1">
+				<input type="submit" value="Submit">
 			</form>
 		</section><!-- @end #form -->
 	</section><!-- @end #canvas -->

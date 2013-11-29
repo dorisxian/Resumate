@@ -1,8 +1,8 @@
 <?php
-	session_start();
 	$log = "Login / Signup";
-	if(isset($_SESSION['uid'])) 
-		$log = "Logout";
+	if(isset($_SESSION['email'])) {
+		$log = "Logout ";
+	}
 ?>
 <header>
 	<img id="logo" src="img/logo.png" alt="">

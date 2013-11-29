@@ -9,15 +9,18 @@
 		
 		//$_SESSION['uid'] and $_POST['rid']
 		// first insert new style and uid into table to secure my new xml id
-		$insert = $dbconn->prepare("INSERT INTO resumes (uid, rid) VALUE (:uid, :rid)");
-		$insert->execute(":uid"=>$_SESSION['uid'], ":rid"=>$_POST['rid']);
+		$insert = $dbconn->prepare("INSERT INTO resumes (uid, rid) VALUES (:uid, :rid)");
+		//$insert->execute(array(':uid' => $_SESSION['uid'], ':rid' => $_POST['rid']));
+		echo "Inserted";
 		
 		// get the last xml id for the user(the one I just inserted
-		$select = $dbconn->prepare("SELECT xml FROM resumes WHERE uid=:uid");
-		$xmlid = end($select->execute(":uid"=>$_SESSION['uid'])->fetchAll())['xml'];
+		$select = $dbconn->prepare("SELECT xmlid FROM resumes WHERE uid=:uid");
+		$select->execute(array(":uid"=>$_SESSION['uid']));
+		$xmlid = end($select->fetchAll())['xmlid'];
+		echo "last resume selected";
 		
-		include('save.php');
+		require('save.php');
 	} catch (Exception $e) {
-		$err = "Error: " . $e->getMessage();
+		echo "Error: " . $e->getMessage();
 	}
 ?> 
