@@ -36,7 +36,7 @@
 	<body>
 		<section id="header">
 			<ul id="basicInfo">
-				<?php if(($load->fname) != ''): ?>		<li id="firstName"><?php 	echo $load->fname[0]; ?></li>		<?php endif; ?>
+				<?php if(($load->fname) != ''): ?>		<li id="firstName"><?php echo $load->fname[0]; ?></li>			<?php endif; ?>
 				<?php if(($load->lname) != ''): ?>		<li id="lastName"><?php echo $load->lname[0]; ?></li>			<?php endif; ?>
 				<?php if(($load->phone) != ''): ?>		<li id="phone"><?php echo $load->phone[0]; ?></li>				<?php endif; ?>
 				<?php if(($load->email) != ''): ?>		<li id="email"><?php echo $load->email[0]; ?></li>				<?php endif; ?>
