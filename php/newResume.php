@@ -10,16 +10,16 @@
 		//$_SESSION['uid'] and $_POST['rid']
 		// first insert new style and uid into table to secure my new xml id
 		$insert = $dbconn->prepare("INSERT INTO resumes (uid, rid) VALUES (:uid, :rid)");
-		//$insert->execute(array(':uid' => $_SESSION['uid'], ':rid' => $_POST['rid']));
-		echo "Inserted";
+		$insert->execute(array(':uid' => $_SESSION['uid'], ':rid' => $_POST['rid']));
 		
 		// get the last xml id for the user(the one I just inserted
 		$select = $dbconn->prepare("SELECT xmlid FROM resumes WHERE uid=:uid");
 		$select->execute(array(":uid"=>$_SESSION['uid']));
 		$xmlid = end($select->fetchAll())['xmlid'];
-		echo "last resume selected";
 		
 		require('save.php');
+		
+		header( 'Location: ../Load.php' );
 	} catch (Exception $e) {
 		echo "Error: " . $e->getMessage();
 	}

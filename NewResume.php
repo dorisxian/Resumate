@@ -1,5 +1,22 @@
 <?php
 	session_start();
+	if(isset($_POST['num'])) {
+		try {
+			$dbname = 'resumate';
+			$user = 'root';
+			$pass = '';
+			$dbconn = new PDO('mysql:host=localhost;dbname='.$dbname, $user, $pass);
+			$dbconn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		} catch (Exception $e) {
+			$err = "Error: " . $e->getMessage();
+		}
+		$select = $dbconn->prepare("SELECT xmlid, rid FROM resumes WHERE uid=:uid");
+		$select->execute(array(":uid"=>$_SESSION['uid']));
+		$result = $select->fetchAll();
+		$xmlid = $result[$_POST['num']]['xmlid'];
+		$rid = $result[$_POST['num']]['rid'];
+		$load = simplexml_load_file("xml/".$xmlid.".xml");
+	}
 ?>
 <!DOCTYPE html>
 <html>

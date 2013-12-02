@@ -1,6 +1,6 @@
 <?php
-	//returns all the resume style ids in a php array
-	function fetchResumes($uid) {
+	//returns all the resumes of a user
+	function fetchResumes() {
 		try {
 			$dbname = 'resumate';
 			$user = 'root';
@@ -10,7 +10,8 @@
 		} catch (Exception $e) {
 			$err = "Error: " . $e->getMessage();
 		}
-		$select = $dbconn->prepare("SELECT rid FROM resumes WHERE uid=:uid");
-		return $select.execute(":uid"=>$_SESSION['uid'])->fetchAll();
+		$select = $dbconn->prepare("SELECT * FROM resumes WHERE uid=:uid");
+		$select->execute(array(":uid"=>$_SESSION['uid']));
+		return $select->fetchAll();
 	}
 ?>

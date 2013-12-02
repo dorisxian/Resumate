@@ -11,6 +11,6 @@
 			$xml .= "\t" . '<'. $key . '>' . $value . '</' . $key . '>' . "\n";
 		}	
 	}
-	xml .= '</info>';
+	$xml .= '</info>';
 	file_put_contents('xml/'.$xmlid.'.xml', $xml);
 ?>
