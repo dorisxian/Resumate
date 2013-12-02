@@ -1,6 +1,5 @@
 <?php
 	session_start();
-	// Connect to the database
 	try {
 		$err = '';
 		if (isset($_POST['login']) && $_POST['login'] == 'Sign In') {
