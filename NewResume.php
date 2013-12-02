@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	if(isset($_POST['num'])) {
+	if(isset($_GET['num'])) {
 		try {
 			$dbname = 'resumate';
 			$user = 'root';
@@ -13,9 +13,12 @@
 		$select = $dbconn->prepare("SELECT xmlid, rid FROM resumes WHERE uid=:uid");
 		$select->execute(array(":uid"=>$_SESSION['uid']));
 		$result = $select->fetchAll();
-		$xmlid = $result[$_POST['num']]['xmlid'];
-		$rid = $result[$_POST['num']]['rid'];
-		$load = simplexml_load_file("xml/".$xmlid.".xml");
+		$xmlid = $result[$_GET['num']]['xmlid'];
+		$rid = $result[$_GET['num']]['rid'];
+		$load = simplexml_load_file("php/xml/".$xmlid.".xml");
+	} else {
+		$rid = 1;
+		$load = simplexml_load_file("php/xml/0.xml");
 	}
 ?>
 <!DOCTYPE html>
@@ -60,65 +63,74 @@
 		</section><!-- @end #sidemenu -->
 		
 		<section id="form">
+			<?php if(isset($_GET['num'])): ?>
+			<form method="POST" action="php/edit.php?num=<?php echo $_GET['num'] ?>">
+			<?php else:?>
 			<form method="POST" action="php/newResume.php">
+			<?php endif; ?>
 				<div id="basic-form" class="formblock">
-					<p><label>First Name</label><input type="text" name="fname" placeholder="Enter First Name"></p>
-					<p><label>Last Name</label><input type="text" name="lname" placeholder="Enter Last Name"></p>
-					<p><label>Address Line 1</label><input type="text" name="address1" placeholder="Enter Address Line 1"></p>
-					<p><label>Address Line 2</label><input type="text" name="address2" placeholder="Enter Address Line 2"></p>
-					<p><label>City</label><input type="text" name="city" placeholder="Enter City"></p>
-					<p><label>State</label><input type="text" name="state" placeholder="Enter State"></p>
-					<p><label>Zip Code</label><input type="text" name="zip" placeholder="Enter Zip Code"></p>
-					<p><label>Phone</label><input type="tel" name="phone" placeholder="Enter Phone"></p>
-					<p><label>Email</label><input type="email" name="email" placeholder="Enter Email"></p>
-					<p><label>Website</label><input type="url" name="website" placeholder="Enter Website URL"></p>
+					<p><label>First Name</label><input type="text" name="fname" placeholder="Enter First Name"				value="<?php echo $load->fname ?>" ></p>
+					<p><label>Last Name</label><input type="text" name="lname" placeholder="Enter Last Name"				value="<?php echo $load->lname ?>" ></p>
+					<p><label>Address Line 1</label><input type="text" name="address1" placeholder="Enter Address Line 1"	value="<?php echo $load->address1 ?>" ></p>
+					<p><label>Address Line 2</label><input type="text" name="address2" placeholder="Enter Address Line 2"	value="<?php echo $load->address2 ?>" ></p>
+					<p><label>City</label><input type="text" name="city" placeholder="Enter City"							value="<?php echo $load->city ?>" ></p>
+					<p><label>State</label><input type="text" name="state" placeholder="Enter State"						value="<?php echo $load->state ?>" ></p>
+					<p><label>Zip Code</label><input type="text" name="zip" placeholder="Enter Zip Code"					value="<?php echo $load->zip ?>"></p>
+					<p><label>Phone</label><input type="tel" name="phone" placeholder="Enter Phone"							value="<?php echo $load->phone ?>"></p>
+					<p><label>Email</label><input type="email" name="email" placeholder="Enter Email"						value="<?php echo $load->email ?>"></p>
+					<p><label>Website</label><input type="url" name="website" placeholder="Enter Website URL"				value="<?php echo $load->website ?>"></p>
 				</div>
 				<div id="profile-form" class="formblock hidden">
-					<p><label>Objective Statement</label><input type="text" name="obj" placeholder="Enter objective statement"></p>
-					<p><label>Profile</label><textarea id="profile" name="profile" placeholder="Enter profile"></textarea></p>	
+					<p><label>Objective Statement</label><input type="text" name="obj" placeholder="Enter objective statement" 	value="<?php echo $load->obj ?>"></p>
+					<p><label>Profile</label><textarea id="profile" name="profile" placeholder="Enter profile"					value="<?php echo $load->profile ?>"></textarea></p>	
 				</div>
 				<div id="education-form" class="formblock hidden">
 					<div class="ed_fields">
-						<p><label>Name</label><input type="text" name="schoolname[]" placeholder="Enter name of school"></p>
-						<p><label>City</label><input type="text" name="schoolcity[]" placeholder="Enter the city of school"></p>
+						<?php foreach($load->schoolname as $i=>$value): ?>
+						<p><label>Name</label><input type="text" name="schoolname[]" placeholder="Enter name of school"			value="<?php echo $load->schoolname[$i] ?>"></p>
+						<p><label>City</label><input type="text" name="schoolcity[]" placeholder="Enter the city of school"		value="<?php echo $load->schoolcity[$i] ?>"></p>
 						<p>
 							<label>Country</label>
 							<select name="schoolcountry[]" onchange="this.className=this.options[this.selectedIndex].className" class="selected">
-								<option value="">Choose the country</option>
+								<option value="<?php echo $load->schoolcountry[$i] ?>">Choose the country</option>
 								<?php foreach(get_countries() as $country_key => $country_name): ?>
 									<option value="<?php echo $country_key; ?>"><?php echo $country_name; ?></option>
 								<?php endforeach; ?>
 							</select>
 						</p>
-						<p><label>Start Date</label><input name="schoolstartdate[]" type="text" id="startDatepicker" placeholder="Choose start date (MMYY)"/></p>
-						<p><label>Guaduation Date</label><input name="schoolenddate[] "type="text" id="endDatepicker" placeholder="Choose (Estimated) Graduation Date (MMYY)"/></p>
-						<p><label>Major</label><input type="text" name="maj[]" placeholder="Enter major if applicable"></p>
-						<p><label>Minor</label><input type="text" name="min[]" placeholder="Enter minor if applicable"></p>
-						<p><label>GPA</label><input type="text" name="gpa[]" placeholder="Enter GPA"></p>
-						<p><label>Relevant Course Work</label><input type="text" name="courses[]" placeholder="Enter relevant course work"></p>
+						<p><label>Start Date</label><input name="schoolstartdate[]" type="text" id="startDatepicker" placeholder="Choose start date (MMYY)"						value="<?php echo $load->schoolstartdate[$i] ?>"/></p>
+						<p><label>Graduation Date</label><input name="schoolenddate[] "type="text" id="endDatepicker" placeholder="Choose (Estimated) Graduation Date (MMYY)"	value="<?php echo $load->schoolenddate[$i] ?>"/></p>
+						<p><label>Major</label><input type="text" name="maj[]" placeholder="Enter major if applicable"	value="<?php echo $load->maj[$i] ?>"></p>
+						<p><label>Minor</label><input type="text" name="min[]" placeholder="Enter minor if applicable"	value="<?php echo $load->min[$i] ?>"></p>
+						<p><label>GPA</label><input type="text" name="gpa[]" placeholder="Enter GPA"					value="<?php echo $load->gpa[$i] ?>"></p>
+						<p><label>Relevant Course Work</label><input type="text" name="courses[]" placeholder="Enter relevant course work"	value="<?php echo $load->courses[$i] ?>"></p>
+						<?php endforeach; ?>
 					</div>
 					<input type="button" id="addSchool" value="Add School" />
 					<input type="button" id="deleteSchool" value="Delete School" />
 				</div>
 				<div id="work-form" class="formblock hidden">
 					<h4>Work Information</h4>	
-					<input type="button" id="addWork" value="Add Work" />
 					<div class="w_fields">
-						<p><label>Company</label><input type="text" name="type[]" placeholder="Enter Company Name"></p>
-						<p><label>Job Title</label><input type="text" name="position[]" placeholder="Enter position held"></p>
-						<p><label>Start Date</label><input type="text" name="workstartdate[]" id="startDatepicker" placeholder="Enter start date"/></p>
-						<p><label>End Date</label><input type="text" name="workenddate[]"id="endDatepicker" placeholder="Enter end date"/></p>
-						<p><label>City</label><input type="text" name="workcity[]" placeholder="Enter the city you worked in"></p>
-						<p><label>Description</label><input type="textarea" name="workdescription[]" placeholder="Enter the job description"></p>
-					<input type="radio" name="workhere" value="1" />I currently work here <br>
-					<input type="button" id="deleteWork" value="Delete Work" />
-					<input type="button" id="addWork" value="Add Work" />
+						<?php foreach ($load->type as $i=>$value): ?>
+						<p><label>Company</label><input type="text" name="type[]" placeholder="Enter Company Name"									value="<?php echo $load->type[$i] ?>"></p>
+						<p><label>Job Title</label><input type="text" name="position[]" placeholder="Enter position held"							value="<?php echo $load->position[$i] ?>"></p>
+						<p><label>Start Date</label><input type="text" name="workstartdate[]" id="startDatepicker" placeholder="Enter start date"	value="<?php echo $load->workstartdate[$i] ?>"/></p>
+						<p><label>End Date</label><input type="text" name="workenddate[]"id="endDatepicker" placeholder="Enter end date"			value="<?php echo $load->workenddate[$i] ?>"/></p>
+						<p><label>City</label><input type="text" name="workcity[]" placeholder="Enter the city you worked in"						value="<?php echo $load->workcity[$i] ?>"></p>
+						<p><label>Description</label><input type="textarea" name="workdescription[]" placeholder="Enter the job description"		value="<?php echo $load->workdescription[$i] ?>"></p>
+						<input type="radio" name="workhere" value="1" />I currently work here <br>
+						<input type="button" id="deleteWork" value="Delete Work" />
+						<input type="button" id="addWork" value="Add Work" />
+						<?php endforeach; ?>
 					</div>
 				</div>
 				<div id="skill-form" class="formblock hidden">
 					<h4>Skills</h4>	
-					<li><label>Relevant Skills</label><input type="text" name="skills" placeholder="Enter relevant skills"></li>
-					<li><label>Relevant Expertise</label><input type="text" name="expertise" placeholder="Enter your relevant expertise"></li>
+					<? foreach($load->skills as $i=>$value): ?>
+					<li><label>Relevant Skills</label><input type="text" name="skills[]" placeholder="Enter relevant skills"				value="<?php echo $load->skills[$i] ?>"></li>
+					<li><label>Relevant Expertise</label><input type="text" name="expertise[]" placeholder="Enter your relevant expertise"	value="<?php echo $load->expertise[$i] ?>"></li>
+					<? endforeach; ?>
 					<input type="button" id="addSkill" value="Add Skill" />
 				</div>	
 				
@@ -126,10 +138,10 @@
 					<h4>Additional Information</h4>	
 					<input type="button" id="addl" value="Add MoreInfo" />
 					<div class="w_fields">
-						<p><label>Website URL</label><input type="text" name="website" placeholder="If relevant, enter your website URL"></p>
-						<p><label>Interests</label><input type="text" name="interests" placeholder="Enter your interests and hobbies"></p>
-						<p><label>Groups and Organizations</label><input type="text" name="groups" placeholder="Enter the organizations you are involved in"></p>
-						<p><label>Languages</label><input type="text" name="languages" placeholder="Enter the languages you speak"></p>
+						<p><label>Website URL</label><input type="text" name="website" placeholder="If relevant, enter your website URL"					value="<?php echo $load->website ?>"></p>
+						<p><label>Interests</label><input type="text" name="interests" placeholder="Enter your interests and hobbies"						value="<?php echo $load->intrests ?>"></p>
+						<p><label>Groups and Organizations</label><input type="text" name="groups" placeholder="Enter the organizations you are involved in"value="<?php echo $load->groups ?>"></p>
+						<p><label>Languages</label><input type="text" name="languages" placeholder="Enter the languages you speak"							value="<?php echo $load->languages ?>"></p>
 					</div>	
 				</div>
 				<input type="number" name="rid" value="1">

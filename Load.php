@@ -15,7 +15,7 @@
 	<?php include('php/header.php'); ?>
 	<section id="canvas">
 		<section id="load">
-			<form id="resumes" method="post" action="php/load.php">
+			<form id="resumes" method="post" action="php/load.php" onsubmit="return validate();">
 				<?php foreach($resumes as $resume): ?>
 				<img src="<?php echo "./img/lib/" . $resume['rid'] . ".png" ?>" class="off">
 				<input type="hidden" name="num" value="<?php echo $index ?>" class="value">
