@@ -1,21 +1,50 @@
-#canvas {
-	background-color:#E83131;
-}
-#load{
-	overflow: hidden;
-	min-width: 350px;
+#resumes{
 	text-align: center;
 }
-
-#resumes {
+#load{
 	-webkit-border-radius: 8px;
 	border-radius: 8px;
 	-moz-box-shadow: 0 0 8px #C9C9C9;
 	-webkit-box-shadow: 0 0 8px #C9C9C9;
 	box-shadow: 0 0 8px #C9C9C9;
 	background: white;
-	padding: 25px 50px;
+	padding: 50px;
 	vertical-align: top;
     horizontal-align: top;
     float: center;
+}
+.link{
+	padding: 0;
+	margin: 0;
+  	font-size: 25px;
+}
+h3{
+	font-size: 22px;
+	color: #F9615F;
+}
+input[type=image]{
+	width: 32px;
+	padding: 5px;
+	margin: 20px 0;
+}
+input[type=image]:focus{
+	outline: none;
+}
+input[type=image]:hover{
+	opacity: 0.7;
+}
+.new{
+	font-size: 18px;
+	text-decoration: none;
+	color: #6C6C6C;
+}
+.new:hover{
+	border-bottom: 3px solid #FC605B;
+	padding-bottom: 6px;
+}
+.new img{
+	height: 20px;
+	padding: 0;
+	margin: 0 5px;
+	vertical-align: text-top;
 }

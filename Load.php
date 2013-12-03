@@ -23,8 +23,8 @@
 				<?php $index++; ?>
 				<?php endforeach; ?>
 				<br/>
-				<input type="image" name="delete" src="./img/minus.png" value="Delete">
-				<input type="image" name="load" src="./img/open.png" value="Load">
+				<input type="image" name="delete" src="./img/delete.png" value="Delete">
+				<input type="image" name="load" src="./img/view.png" value="Load">
 				<input type="image" name="edit" src="./img/edit.png" value="Edit">
 			</form>
 		</section>
