@@ -4,16 +4,22 @@
 }
 #user{
 	overflow: hidden;
-	min-width: 350px;
-	padding-left: 37%;
+	min-width: 380px;
+	padding-left: 30%;
 	text-align: center;
 }
-@media (max-width: 800px){
+@media (max-width: 900px){
 	#user{
-		padding-left: 17%;
+		padding-left: 15%;
+	}
+}
+@media (min-width: 1400px){
+	#user{
+		padding-left: 35%;
 	}
 }
 #register,#login{
+	width: 380px;
 	-webkit-border-radius: 8px;
 	border-radius: 8px;
 	-moz-box-shadow: 0 0 8px #C9C9C9;
@@ -45,6 +51,7 @@ h2{
 	margin: 0;
 }
 input{
+	width: 81%;
 	padding: 8px;
 	font-size: 20px;
 	margin-left: 10px;
@@ -126,6 +133,14 @@ textarea:focus {
 	outline-color: #FF7569;
 	outline-style: solid;
 	outline-width: 2px;
+}
+
+.error{
+	color: #FF4F45;
+	line-height: 22px;
+}
+.fa-exclamation-circle{
+	margin-right: 7px;
 }
 
 /* @end User Page */

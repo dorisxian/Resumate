@@ -1,11 +1,12 @@
 <?php
 	session_start();
 	try {
-		$dbname = 'resumate';
-		$user = 'root';
-		$pass = '';
-		$dbconn = new PDO('mysql:host=localhost;dbname='.$dbname, $user, $pass);
-		$dbconn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		include('connect.php');
+		// $dbname = 'resumate';
+		// $user = 'root';
+		// $pass = '';
+		// $dbconn = new PDO('mysql:host=localhost;dbname='.$dbname, $user, $pass);
+		// $dbconn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		
 		//$_SESSION['uid'] and $_POST['rid']
 		// first insert new style and uid into table to secure my new xml id

@@ -35,14 +35,14 @@ $(document).ready(function() {
   });
   
   
-   $("#startDatepicker,#endDatepicker").datepicker({
+   $(".startDatepicker,.endDatepicker").datepicker({
     changeMonth: true,
     changeYear: true,
     dateFormat: 'MM yy'
   });
 
 
- $('#deleteSchool').hide(); 
+ $('#deleteSchool').hide();
 
   $('#addSchool').click(function(e) {
     $("#deleteSchool").show();
@@ -63,7 +63,7 @@ $(document).ready(function() {
   });
   
   
-$('#deleteWork').hide(); 
+$('#deleteWork').hide();
   $('#addWork').click(function(w) {
     $("#deleteWork").show();
     $("#work-form").append($("#work-form div.w_fields:eq(0)").clone(true));
@@ -77,7 +77,9 @@ $('#deleteWork').hide();
 
   $('#deleteWork').click(function() {
     $("#work-form div.w_fields:last").remove();
-    $("#deleteWork").hide();
+    if ($("#work-form").children("div").length ==1) {
+       $("#deleteWork").hide();
+    };
   });
   
 

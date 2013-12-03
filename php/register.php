@@ -1,11 +1,12 @@
 <?php
 	function register() {
 		global $err;
-		$dbname = 'resumate';
-		$user = 'root';
-		$pass = '';
-		$dbconn = new PDO('mysql:host=localhost;dbname='.$dbname, $user, $pass);
-		$dbconn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		include('connect.php');
+		// $dbname = 'resumate';
+		// $user = 'root';
+		// $pass = '';
+		// $dbconn = new PDO('mysql:host=localhost;dbname='.$dbname, $user, $pass);
+		// $dbconn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		
 		$user = $_POST['email'];
 		$salt = hash('sha256', uniqid(mt_rand(), true));  

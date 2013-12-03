@@ -2,11 +2,12 @@
 	session_start();
 	// connect to the database
 	try {
-		$dbname = 'resumate';
-		$user = 'root';
-		$pass = '';
-		$dbconn = new PDO('mysql:host=localhost;dbname='.$dbname, $user, $pass);
-		$dbconn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		include('connect.php');
+		// $dbname = 'resumate';
+		// $user = 'root';
+		// $pass = '';
+		// $dbconn = new PDO('mysql:host=localhost;dbname='.$dbname, $user, $pass);
+		// $dbconn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	} catch (Exception $e) {
 		$err = "Error: " . $e->getMessage();
 	}

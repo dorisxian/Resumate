@@ -49,7 +49,7 @@
 		<section id="user">
 			<form id="login" class="" action="User.php" method="post">
 				<h2 class="subtitle">Login</h2>
-				<p><?php echo $err; ?></p>
+				<p class="error"><?php if ($err != null){ echo '<i class="fa fa-exclamation-circle"></i>'.$err;} ?></p>
 				<div><i class="fa fa-envelope fa-fw"></i><input type="email" name="email" placeholder="Email" required></div>
 				<div><i class="fa fa-key fa-fw"></i><input type="password" name="pass" placeholder="Password" required></div>
 				<input type="submit" name="login" value="Sign In" class="thin"/>
@@ -57,7 +57,7 @@
 			</form>
 			<form id="register" class="hidden" action="User.php" method="post" onsubmit="return validate();">
 				<h2 class="subtitle">Register</h2>
-				<p id="errorMessage"></p>
+				<p id="errorMessage" class="error"></p>
 				<div><i class="fa fa-envelope fa-fw"></i><input type="email" name="email" placeholder="Email" required></div>
 				<div><i class="fa fa-key fa-fw"></i><input type="password" name="password" placeholder="Password" required></div>
 				<div><i class="fa fa-lock fa-fw"></i><input type="password" name="passwordconfirm" placeholder="Confirm Password" required></div>
