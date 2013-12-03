@@ -62,7 +62,9 @@
 													<div id="profile"><?php echo $load->profile[0]; ?></div> 	<?php endif; ?>
 		</section>
 		<section class="body" id="education">
+			<?php if(($load->schoolname[0]) != ''): ?>
 			<h2 class="sectiontitle">Education</h2>
+			<?php endif; ?>
 			<?php for($i = 0;  $i < $load->schoolname->count(); $i++): ?>
 			<ul class="school">
 				<?php if(($load->schoolname[$i]) != ''): ?>		<li class="sName"><?php echo $load->schoolname[$i]; ?></li>			<?php endif; ?>
@@ -82,7 +84,9 @@
 			<?php endfor; ?>
 		</section>
 		<section class="body" id="work">
+			<?php if($load->type[0] != ''): ?>
 			<h2 class="sectiontitle">Relevant Experience</h2>
+			<?php endif; ?>
 			<?php for($i = 0;  $i < $load->type->count(); $i++): ?>
 			<?php if($load->workhere == $i):; ?>
 			<ul class="job" id="currentJob">
@@ -116,7 +120,22 @@
 			<?php endfor; ?>
 		</section>
 		<section class="body" id="skills">
-			??? doesn't look complete to me
+			<?php if(($load->skills != '')): ?>
+			<h2 class="sectiontitle">Skills</h2>
+			<div id="skill">
+				<?php echo $load->skills ?>
+			</div>
+			<?php endif; ?>
 		</section>	
+		<section class="body" id="addt-info">
+			<?php if(($load->interests != '') || ($load->groups != '') || ($load->languages != '')):?>
+			<h2 class="sectiontitle">Additional Information</h2>
+			<ul id="info">
+				<?php if(($load->interests) != ''):?>	<span id="int">Interests:</span><li id="interests"><?php echo $load->interests ?></li>		<?php endif; ?>
+				<?php if(($load->groups) != ''):?>		<span id="grp">Groups:</span><li id="groups"><?php echo $load->groups ?></li>				<?php endif; ?>
+				<?php if(($load->languages) != ''):?>	<span id="lang">Languages:</span><li id="languages"><?php echo $load->languages ?></li>		<?php endif; ?>
+			</ul>
+			<?php endif; ?>
+		</section>
 	</body>
 </html>

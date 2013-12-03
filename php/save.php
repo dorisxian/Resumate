@@ -12,5 +12,9 @@
 		}	
 	}
 	$xml .= '</info>';
-	file_put_contents('xml/'.$xmlid.'.xml', $xml);
+	$saved = file_put_contents('xml/'.$xmlid.'.xml', $xml);
+	
+	if(!$saved) {
+		exit();
+	}
 ?>

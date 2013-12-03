@@ -118,8 +118,8 @@
 					<div class="w_fields">
 						<p><label>Company</label><input type="text" name="type[]" placeholder="Enter Company Name"									value="<?php echo $load->type[$i] ?>"></p>
 						<p><label>Job Title</label><input type="text" name="position[]" placeholder="Enter position held"							value="<?php echo $load->position[$i] ?>"></p>
-						<p><label>Start Date</label><input type="text" name="workstartdate[]" class="startDatepicker" placeholder="Enter start date"	value="<?php echo $load->workstartdate[$i] ?>"/></p>
-						<p><label>End Date</label><input type="text" name="workenddate[]" class="endDatepicker" placeholder="Enter end date"			value="<?php echo $load->workenddate[$i] ?>"/></p>
+						<p><label>Start Date</label><input type="text" name="workstartdate[]" class="startDatepicker" placeholder="Enter start date"value="<?php echo $load->workstartdate[$i] ?>"/></p>
+						<p><label>End Date</label><input type="text" name="workenddate[]" class="endDatepicker" placeholder="Enter end date"		value="<?php echo $load->workenddate[$i] ?>"/></p>
 						<p><label>City</label><input type="text" name="workcity[]" placeholder="Enter the city you worked in"						value="<?php echo $load->workcity[$i] ?>"></p>
 						<p><label>Description</label><input type="textarea" name="workdescription[]" placeholder="Enter the job description"		><?php echo $load->workdescription[$i] ?></textarea></p>
 						<p class="check"><label>I currently work here</label><input type="checkbox"></p>
@@ -131,17 +131,12 @@
 				</div>
 				<div id="skill-form" class="formblock hidden">
 					<p><label>Skills & Expertise</label><textarea name="skills" placeholder="List your skills"								value="<?php echo $load->skills ?>"></textarea></p>
-<!-- 					<? foreach($load->skills as $i=>$value): ?>
-					<li><label>Relevant Skills</label><input type="text" name="skills[]" placeholder="Enter relevant skills"				value="<?php echo $load->skills[$i] ?>"></li>
-					<li><label>Relevant Expertise</label><input type="text" name="expertise[]" placeholder="Enter your relevant expertise"	value="<?php echo $load->expertise[$i] ?>"></li>
-					<? endforeach; ?>
-					<input type="button" id="addSkill" value="Add Skill" /> -->
 				</div>
 				
 				<div id="addl-form" class="formblock hidden">
-					<p><label>Interests</label><textarea name="interests" placeholder="Enter your interests and hobbies"						value="<?php echo $load->intrests ?>"></textarea></p>
-					<p><label>Groups and Organizations</label><textarea name="groups" placeholder="Enter the organizations you are involved in"value="<?php echo $load->groups ?>"></textarea></p>
-					<p><label>Languages</label><textarea name="languages" placeholder="Enter the languages you speak"							value="<?php echo $load->languages ?>"></textarea></p>
+					<p><label>Interests</label><textarea name="interests" placeholder="Enter your interests and hobbies"						><?php echo $load->intrests ?></textarea></p>
+					<p><label>Groups and Organizations</label><textarea name="groups" placeholder="Enter the organizations you are involved in"	><?php echo $load->groups ?></textarea></p>
+					<p><label>Languages</label><textarea name="languages" placeholder="Enter the languages you speak"							><?php echo $load->languages ?></textarea></p>
 				</div>
 				<input type="number" name="rid" value="1">
 				<input type="submit" value="Submit">

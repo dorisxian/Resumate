@@ -20,7 +20,6 @@
 	<maj></maj>
 	<min></min>
 	<gpa></gpa>
-	<courses></courses>
 	<type></type>
 	<position></position>
 	<workstartdate></workstartdate>
@@ -28,9 +27,8 @@
 	<workcity></workcity>
 	<workdescription></workdescription>
 	<skills></skills>
-	<expertise></expertise>
 	<interests></interests>
 	<groups></groups>
 	<languages></languages>
-	<rid>1</rid>
+	<rid>3</rid>
 </info>
