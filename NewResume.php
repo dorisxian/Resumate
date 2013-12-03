@@ -2,11 +2,12 @@
 	session_start();
 	if(isset($_GET['num'])) {
 		try {
-			$dbname = 'resumate';
-			$user = 'root';
-			$pass = '';
-			$dbconn = new PDO('mysql:host=localhost;dbname='.$dbname, $user, $pass);
-			$dbconn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			include('connect.php');
+			// $dbname = 'resumate';
+			// $user = 'root';
+			// $pass = '';
+			// $dbconn = new PDO('mysql:host=localhost;dbname='.$dbname, $user, $pass);
+			// $dbconn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		} catch (Exception $e) {
 			$err = "Error: " . $e->getMessage();
 		}
@@ -59,6 +60,9 @@
 				<li>
 					<a href="#skill-form"><i class="fa fa-tasks fa-fw"></i>Skills</a>
 				</li>
+				<li>
+					<a href="#addl-form"><i class="fa fa-heart fa-fw"></i>Other Information</a>
+				</li>
 			</ul>
 		</section><!-- @end #sidemenu -->
 		
@@ -82,11 +86,11 @@
 				</div>
 				<div id="profile-form" class="formblock hidden">
 					<p><label>Objective Statement</label><input type="text" name="obj" placeholder="Enter objective statement" 	value="<?php echo $load->obj ?>"></p>
-					<p><label>Profile</label><textarea id="profile" name="profile" placeholder="Enter profile"					><?php echo $load->profile ?></textarea></p>	
+					<p><label>Profile</label><textarea id="profile" name="profile" placeholder="Enter profile"					value="<?php echo $load->profile ?>"></textarea></p>	
 				</div>
 				<div id="education-form" class="formblock hidden">
 					<div class="ed_fields">
-						<?php for($i = 0;  $i < $load->schoolname->count(); $i++): ?>
+						<?php foreach($load->schoolname as $i=>$value): ?>
 						<p><label>Name</label><input type="text" name="schoolname[]" placeholder="Enter name of school"			value="<?php echo $load->schoolname[$i] ?>"></p>
 						<p><label>City</label><input type="text" name="schoolcity[]" placeholder="Enter the city of school"		value="<?php echo $load->schoolcity[$i] ?>"></p>
 						<p>
@@ -98,50 +102,46 @@
 								<?php endforeach; ?>
 							</select>
 						</p>
-						<p><label>Start Date</label><input name="schoolstartdate[]" type="text" id="startDatepicker" placeholder="Choose start date (MMYY)"						value="<?php echo $load->schoolstartdate[$i] ?>"/></p>
-						<p><label>Graduation Date</label><input name="schoolenddate[] "type="text" id="endDatepicker" placeholder="Choose (Estimated) Graduation Date (MMYY)"	value="<?php echo $load->schoolenddate[$i] ?>"/></p>
+						<p><label>Start Date</label><input name="schoolstartdate[]" type="text" class="startDatepicker" placeholder="Choose start date (MMYY)"						value="<?php echo $load->schoolstartdate[$i] ?>"/></p>
+						<p><label>Graduation Date</label><input name="schoolenddate[] "type="text" class="endDatepicker" placeholder="Choose (Estimated) Graduation Date (MMYY)"	value="<?php echo $load->schoolenddate[$i] ?>"/></p>
 						<p><label>Major</label><input type="text" name="maj[]" placeholder="Enter major if applicable"	value="<?php echo $load->maj[$i] ?>"></p>
 						<p><label>Minor</label><input type="text" name="min[]" placeholder="Enter minor if applicable"	value="<?php echo $load->min[$i] ?>"></p>
 						<p><label>GPA</label><input type="text" name="gpa[]" placeholder="Enter GPA"					value="<?php echo $load->gpa[$i] ?>"></p>
 						<?php endfor; ?>
 					</div>
-					<input type="button" id="addSchool" value="Add School" />
-					<input type="button" id="deleteSchool" value="Delete School" />
+					<p class="button" id="deleteSchool"><i class="fa fa-times fa-fw"></i>Delete Entry</p>
+					<p class="button" id="addSchool"><i class="fa fa-plus fa-fw"></i>Add Entry</p>
+					
 				</div>
-				<div id="work-form" class="formblock hidden">
-					<h4>Work Information</h4>	
+				<div id="work-form" class="formblock hidden">	
 					<div class="w_fields">
 						<?php for($i = 0;  $i < $load->type->count(); $i++): ?>
 						<p><label>Company</label><input type="text" name="type[]" placeholder="Enter Company Name"									value="<?php echo $load->type[$i] ?>"></p>
 						<p><label>Job Title</label><input type="text" name="position[]" placeholder="Enter position held"							value="<?php echo $load->position[$i] ?>"></p>
-						<p><label>Start Date</label><input type="text" name="workstartdate[]" id="startDatepicker" placeholder="Enter start date"	value="<?php echo $load->workstartdate[$i] ?>"/></p>
-						<p><label>End Date</label><input type="text" name="workenddate[]"id="endDatepicker" placeholder="Enter end date"			value="<?php echo $load->workenddate[$i] ?>"/></p>
+						<p><label>Start Date</label><input type="text" name="workstartdate[]" class="startDatepicker" placeholder="Enter start date"	value="<?php echo $load->workstartdate[$i] ?>"/></p>
+						<p><label>End Date</label><input type="text" name="workenddate[]" class="endDatepicker" placeholder="Enter end date"			value="<?php echo $load->workenddate[$i] ?>"/></p>
 						<p><label>City</label><input type="text" name="workcity[]" placeholder="Enter the city you worked in"						value="<?php echo $load->workcity[$i] ?>"></p>
 						<p><label>Description</label><input type="textarea" name="workdescription[]" placeholder="Enter the job description"		><?php echo $load->workdescription[$i] ?></textarea></p>
-						<input type="radio" name="workhere" value="1" />I currently work here <br>
-						<input type="button" id="deleteWork" value="Delete Work" />
-						<input type="button" id="addWork" value="Add Work" />
+						<p class="check"><label>I currently work here</label><input type="checkbox"></p>
+						<!-- <input type="radio" name="workhere" value="1" />I currently work here -->
 						<?php endfor; ?>
 					</div>
+					<p class="button" id="deleteWork"><i class="fa fa-times fa-fw"></i>Delete Entry</p>
+					<p class="button" id="addWork"><i class="fa fa-plus fa-fw"></i>Add Entry</p>
 				</div>
 				<div id="skill-form" class="formblock hidden">
-					<h4>Skills</h4>	
-					<? foreach($load->skills as $i=>$value): ?>
+					<p><label>Skills & Expertise</label><textarea name="skills" placeholder="List your skills"								value="<?php echo $load->skills ?>"></textarea></p>
+<!-- 					<? foreach($load->skills as $i=>$value): ?>
 					<li><label>Relevant Skills</label><input type="text" name="skills[]" placeholder="Enter relevant skills"				value="<?php echo $load->skills[$i] ?>"></li>
 					<li><label>Relevant Expertise</label><input type="text" name="expertise[]" placeholder="Enter your relevant expertise"	value="<?php echo $load->expertise[$i] ?>"></li>
 					<? endforeach; ?>
-					<input type="button" id="addSkill" value="Add Skill" />
-				</div>	
+					<input type="button" id="addSkill" value="Add Skill" /> -->
+				</div>
 				
 				<div id="addl-form" class="formblock hidden">
-					<h4>Additional Information</h4>	
-					<input type="button" id="addl" value="Add MoreInfo" />
-					<div class="w_fields">
-						<p><label>Website URL</label><input type="text" name="website" placeholder="If relevant, enter your website URL"					value="<?php echo $load->website ?>"></p>
-						<p><label>Interests</label><input type="text" name="interests" placeholder="Enter your interests and hobbies"						value="<?php echo $load->intrests ?>"></p>
-						<p><label>Groups and Organizations</label><input type="text" name="groups" placeholder="Enter the organizations you are involved in"value="<?php echo $load->groups ?>"></p>
-						<p><label>Languages</label><input type="text" name="languages" placeholder="Enter the languages you speak"							value="<?php echo $load->languages ?>"></p>
-					</div>	
+					<p><label>Interests</label><textarea name="interests" placeholder="Enter your interests and hobbies"						value="<?php echo $load->intrests ?>"></textarea></p>
+					<p><label>Groups and Organizations</label><textarea name="groups" placeholder="Enter the organizations you are involved in"value="<?php echo $load->groups ?>"></textarea></p>
+					<p><label>Languages</label><textarea name="languages" placeholder="Enter the languages you speak"							value="<?php echo $load->languages ?>"></textarea></p>
 				</div>
 				<input type="number" name="rid" value="1">
 				<input type="submit" value="Submit">
