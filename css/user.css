@@ -31,16 +31,8 @@
 	float: left;
 }
 #logout{
-	-webkit-border-radius: 8px;
-	border-radius: 8px;
-	-moz-box-shadow: 0 0 8px #C9C9C9;
-	-webkit-box-shadow: 0 0 8px #C9C9C9;
-	box-shadow: 0 0 8px #C9C9C9;
-	background: white;
-	padding: 25px 50px;
-	vertical-align: top;
-    horizontal-align: top;
-    float: center;
+	width: 200px;
+	float: right;
 }
 .hidden {
 	display: none;
@@ -50,7 +42,7 @@ h2{
 	color: #9B9B9B;
 	margin: 0;
 }
-input{
+input:not([type=image]){
 	width: 81%;
 	padding: 8px;
 	font-size: 20px;

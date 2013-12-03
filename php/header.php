@@ -1,7 +1,7 @@
 <?php
 	$log = "Login / Signup";
 	if(isset($_SESSION['email'])) {
-		$log = "Logout ";
+		$log = "User";
 	}
 ?>
 <header>
