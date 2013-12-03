@@ -82,11 +82,11 @@
 				</div>
 				<div id="profile-form" class="formblock hidden">
 					<p><label>Objective Statement</label><input type="text" name="obj" placeholder="Enter objective statement" 	value="<?php echo $load->obj ?>"></p>
-					<p><label>Profile</label><textarea id="profile" name="profile" placeholder="Enter profile"					value="<?php echo $load->profile ?>"></textarea></p>	
+					<p><label>Profile</label><textarea id="profile" name="profile" placeholder="Enter profile"					><?php echo $load->profile ?></textarea></p>	
 				</div>
 				<div id="education-form" class="formblock hidden">
 					<div class="ed_fields">
-						<?php foreach($load->schoolname as $i=>$value): ?>
+						<?php for($i = 0;  $i < $load->schoolname->count(); $i++): ?>
 						<p><label>Name</label><input type="text" name="schoolname[]" placeholder="Enter name of school"			value="<?php echo $load->schoolname[$i] ?>"></p>
 						<p><label>City</label><input type="text" name="schoolcity[]" placeholder="Enter the city of school"		value="<?php echo $load->schoolcity[$i] ?>"></p>
 						<p>
@@ -103,8 +103,7 @@
 						<p><label>Major</label><input type="text" name="maj[]" placeholder="Enter major if applicable"	value="<?php echo $load->maj[$i] ?>"></p>
 						<p><label>Minor</label><input type="text" name="min[]" placeholder="Enter minor if applicable"	value="<?php echo $load->min[$i] ?>"></p>
 						<p><label>GPA</label><input type="text" name="gpa[]" placeholder="Enter GPA"					value="<?php echo $load->gpa[$i] ?>"></p>
-						<p><label>Relevant Course Work</label><input type="text" name="courses[]" placeholder="Enter relevant course work"	value="<?php echo $load->courses[$i] ?>"></p>
-						<?php endforeach; ?>
+						<?php endfor; ?>
 					</div>
 					<input type="button" id="addSchool" value="Add School" />
 					<input type="button" id="deleteSchool" value="Delete School" />
@@ -112,17 +111,17 @@
 				<div id="work-form" class="formblock hidden">
 					<h4>Work Information</h4>	
 					<div class="w_fields">
-						<?php foreach ($load->type as $i=>$value): ?>
+						<?php for($i = 0;  $i < $load->type->count(); $i++): ?>
 						<p><label>Company</label><input type="text" name="type[]" placeholder="Enter Company Name"									value="<?php echo $load->type[$i] ?>"></p>
 						<p><label>Job Title</label><input type="text" name="position[]" placeholder="Enter position held"							value="<?php echo $load->position[$i] ?>"></p>
 						<p><label>Start Date</label><input type="text" name="workstartdate[]" id="startDatepicker" placeholder="Enter start date"	value="<?php echo $load->workstartdate[$i] ?>"/></p>
 						<p><label>End Date</label><input type="text" name="workenddate[]"id="endDatepicker" placeholder="Enter end date"			value="<?php echo $load->workenddate[$i] ?>"/></p>
 						<p><label>City</label><input type="text" name="workcity[]" placeholder="Enter the city you worked in"						value="<?php echo $load->workcity[$i] ?>"></p>
-						<p><label>Description</label><input type="textarea" name="workdescription[]" placeholder="Enter the job description"		value="<?php echo $load->workdescription[$i] ?>"></p>
+						<p><label>Description</label><input type="textarea" name="workdescription[]" placeholder="Enter the job description"		><?php echo $load->workdescription[$i] ?></textarea></p>
 						<input type="radio" name="workhere" value="1" />I currently work here <br>
 						<input type="button" id="deleteWork" value="Delete Work" />
 						<input type="button" id="addWork" value="Add Work" />
-						<?php endforeach; ?>
+						<?php endfor; ?>
 					</div>
 				</div>
 				<div id="skill-form" class="formblock hidden">
