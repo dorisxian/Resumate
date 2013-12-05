@@ -11,7 +11,7 @@ if(isset($_POST['send'])) {
     //see http://php.net/manual/en/function.mail.php under the Parameters>message heading
     $message = str_replace("\n.", "\n..", $message);
     
-    $headers = 'From: ' . $emailer . '' . "\r\n" . 'Reply-To: ' . $emailer . '' . "\r\n" . 'X-Mailer: PHP/' . phpversion();
+    $headers = 'From: ' . $name . '<' . $emailer . '>' . "\r\n" . 'Reply-To: ' . $emailer . '' . "\r\n" . 'X-Mailer: PHP/' . phpversion();
     
     mail($siteEmail, $subject, $message, $headers);
 }
