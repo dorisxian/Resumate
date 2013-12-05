@@ -56,11 +56,12 @@
 			<a class="new" href="NewResume.php"><img src="./img/file_new.png" alt="">Create a new resume</a>
 			<form id="resumes" method="post" action="php/load.php" onsubmit="return Validate();">
 				<?php foreach($resumes as $resume): ?>
-				<img src="<?php echo "./img/lib/" . $resume['rid'] . ".png" ?>" class="off">
+				<img src="<?php echo "./img/lib/" . $resume['rid'] . ".png" ?>" class="off thumbnail">
 				<input type="hidden" name="num" value="<?php echo $index ?>" class="value">
-				<img src="<?php echo "./img/lib/" . $resume['rid'] . "h.png" ?>" class="on">
+				<img src="<?php echo "./img/lib/" . $resume['rid'] . "h.png" ?>" class="on thumbnail">
 				<?php $index++; ?>
 				<?php endforeach; ?>
+				<br/>
 				<input type="image" name="delete" src="./img/file_delete.png" value="Delete">
 				<input type="image" name="load" src="./img/file_search.png" value="Load">
 				<input type="image" name="edit" src="./img/file_edit.png" value="Edit">

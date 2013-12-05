@@ -1,0 +1,89 @@
+body {
+	margin: auto;
+	background: #FFF;
+	border: 5px #000 double;
+	padding: 20px;
+	width: 800px;
+	font-family: Georgia;
+	color: #000;
+	background: white;
+	font-size: 16px;
+}
+li{
+	list-style: none;
+	line-height: 24px;
+}
+.sectiontitle{
+	font-variant: small-caps;
+	color: #000;
+	font-size: 24px;
+	padding-bottom: 2px;
+}
+#header {
+	padding-bottom: 10px;
+	border-bottom: 5px solid #000;
+	text-align: center;
+
+}
+#header ul {
+	margin: 0;
+}
+#firstName, #lastName{
+	display: inline-block;
+	text-align: center;
+	margin: 10px 5px;
+}
+.fn{
+	font-size: 28px;
+	font-weight: bold;
+	padding-bottom: 20px;
+}
+#addressInfo li{
+	display: inline-block;
+}
+#email, #website {
+	color: #FF6600;
+	cursor: pointer;
+}
+#email:hover, #website:hover{
+	text-decoration: underline;
+}
+#profile li{
+	color: #000;
+	margin-bottom: 5px;
+	list-style: disc;
+}
+#education ul, #work ul, #addt-info ul {
+	padding-left: 0;
+}
+.sName, .sCity, .sCounty, .sStartDate, .sEndDate, .wStartDate, .wEndDate{
+	display: inline-block;
+}
+.sName, .wTitle{
+	margin-right: 15px;
+	color: #FF6600;
+}
+.sCity{
+	margin-left: 8px;
+}
+.dates{
+	float: right;
+	font-size: 12pt;
+	text-align: right;
+}
+.wCompany{
+	color: #303030;
+	font-weight: 600;
+}
+.job:not(:last-child){
+	border-bottom: 1px dashed #FF6600;
+	padding-bottom: 30px;
+	margin: 30px 0;
+}
+#objective, #education, #work, #skills {
+	border-bottom: 2px dotted #000;
+}
+#skills {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}

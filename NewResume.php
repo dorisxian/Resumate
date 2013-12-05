@@ -1,12 +1,12 @@
 <?php
 	session_start();
 	try {
-		include('php/connect.php');
-		// $dbname = 'resumate';
-		// $user = 'root';
-		// $pass = '';
-		// $dbconn = new PDO('mysql:host=localhost;dbname='.$dbname, $user, $pass);
-		// $dbconn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		//include('php/connect.php');
+		$dbname = 'resumate';
+		$user = 'root';
+		$pass = '';
+		$dbconn = new PDO('mysql:host=localhost;dbname='.$dbname, $user, $pass);
+		$dbconn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	} catch (Exception $e) {
 		$err = "Error: " . $e->getMessage();
 	}
@@ -21,6 +21,10 @@
 		$rid = 1;
 		$load = simplexml_load_file("php/xml/0.xml");
 	}
+
+	$styles = $dbconn->prepare("SELECT * FROM styles WHERE 1");
+	$styles->execute();
+	$size = count($styles->fetchAll());
 ?>
 <!DOCTYPE html>
 <html>
@@ -64,7 +68,7 @@
 					<a href="#addl-form"><i class="fa fa-heart fa-fw"></i>Other Information</a>
 				</li>
 				<li>
-					<a href="#style-picker"><i class="fa fa-file fa-fw"></i>Style Picker</a>
+					<a href="#style-picker"><i class="fa fa-file fa-fw"></i>Template Picker</a>
 				</li>
 			</ul>
 		</section><!-- @end #sidemenu -->
@@ -92,7 +96,7 @@
 					<p><label>Profile</label><textarea id="profile" name="profile" placeholder="Enter profile"					value="<?php echo $load->profile ?>"></textarea></p>	
 				</div>
 				<div id="education-form" class="formblock hidden">
-					<?php for($i = 0;  $i < $load->schoolname->count(); $i++): ?>
+					<?php for($i = 0;  $i < count($load->schoolname); $i++): ?>
 					<div class="ed_fields">
 						<p><label>Name</label><input type="text" name="schoolname[]" placeholder="Enter name of school"			value="<?php echo $load->schoolname[$i] ?>"></p>
 						<p><label>City</label><input type="text" name="schoolcity[]" placeholder="Enter the city of school"		value="<?php echo $load->schoolcity[$i] ?>"></p>
@@ -117,7 +121,7 @@
 					
 				</div>
 				<div id="work-form" class="formblock hidden">	
-					<?php for($i = 0;  $i < $load->type->count(); $i++): ?>
+					<?php for($i = 0;  $i < count($load->type); $i++): ?>
 					<div class="w_fields">
 						<p><label>Company</label><input type="text" name="type[]" placeholder="Enter Company Name"									value="<?php echo $load->type[$i] ?>"></p>
 						<p><label>Job Title</label><input type="text" name="position[]" placeholder="Enter position held"							value="<?php echo $load->position[$i] ?>"></p>
@@ -141,16 +145,11 @@
 					<p><label>Groups and Organizations</label><textarea name="groups" placeholder="Enter the organizations you are involved in"	><?php echo $load->groups ?></textarea></p>
 					<p><label>Languages</label><textarea name="languages" placeholder="Enter the languages you speak"							><?php echo $load->languages ?></textarea></p>
 				</div>
-				<?php 
-					$styles = $dbconn->prepare("SELECT * FROM styles WHERE 1");
-					$styles->execute();
-					$size = count($styles->fetchAll());
-				?>
 				<div id="style-picker" class="formblock hidden">
 					<?php for($index = 1; $index != $size + 1; $index++): ?>
-					<img src="<?php echo "./img/lib/" . $index . ".png" ?>" class="off">
+					<img src="<?php echo "./img/lib/" . $index . ".png" ?>" class="off thumbnail">
 					<input type="hidden" name="rid" value="<?php echo $index ?>" class="value">
-					<img src="<?php echo "./img/lib/" . $index . "h.png" ?>" class="on">
+					<img src="<?php echo "./img/lib/" . $index . "h.png" ?>" class="on thumbnail">
 					<?php endfor; ?>
 					<input type="submit" value="Submit">
 				</div>
