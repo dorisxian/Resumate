@@ -128,7 +128,7 @@
 						<p><label>Start Date</label><input type="text" name="workstartdate[]" class="startDatepicker" placeholder="Enter start date"value="<?php echo $load->workstartdate[$i] ?>"/></p>
 						<p><label>End Date</label><input type="text" name="workenddate[]" class="endDatepicker" placeholder="Enter end date"		value="<?php echo $load->workenddate[$i] ?>"/></p>
 						<p><label>City</label><input type="text" name="workcity[]" placeholder="Enter the city you worked in"						value="<?php echo $load->workcity[$i] ?>"></p>
-						<p><label>Description</label><input type="textarea" name="workdescription[]" placeholder="Enter the job description"		><?php echo $load->workdescription[$i] ?></textarea></p>
+						<p><label>Description</label><textarea type="textarea" name="workdescription[]" placeholder="Enter the job description"		><?php echo $load->workdescription[$i] ?></textarea></p>
 						<p class="check"><label>I currently work here</label><input type="checkbox"></p>
 						<!-- <input type="radio" name="workhere" value="1" />I currently work here -->
 					</div>
