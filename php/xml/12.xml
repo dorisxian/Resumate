@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<info>
+	<fname>Rob</fname>
+	<lname>Howard</lname>
+	<address1>123 Street Dr.</address1>
+	<address2></address2>
+	<city>Troy</city>
+	<state>NY</state>
+	<zip>12180</zip>
+	<phone>1-123-1234</phone>
+	<email>howarr4@rpi.edu</email>
+	<website>http://www.test.com</website>
+	<obj>To job</obj>
+	<profile>asd</profile>
+	<schoolname>Rinzler Politoadnic</schoolname>
+	<schoolcity>Troy</schoolcity>
+	<schoolcountry>US</schoolcountry>
+	<schoolstartdate>September 2010</schoolstartdate>
+	<schoolenddate>December 2013</schoolenddate>
+	<maj>Computerz</maj>
+	<min>Smaller Comouterz</min>
+	<gpa>3.998</gpa>
+	<type>Corporation, Inc.</type>
+	<position>indentured servant</position>
+	<workstartdate>December 2013</workstartdate>
+	<workenddate>December 2013</workenddate>
+	<workcity>Alamo, TX</workcity>
+	<workdescription>do what youre told</workdescription>
+	<skills>asdhhh</skills>
+	<interests>asd</interests>
+	<groups>sd</groups>
+	<languages>asd</languages>
+	<rid>1</rid>
+</info>
