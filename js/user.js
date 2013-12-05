@@ -24,7 +24,7 @@ $(document).ready(function() {
 	});
 });
 
-function validate() {
+function Validate() {
 	if($('[name=password]').val() != $('[name=passwordconfirm]').val()) {
 		$("#errorMessage").html('<i class="fa fa-exclamation-circle"></i>'+"Passwords do not match");
 		$('[name=password]').val("");

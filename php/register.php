@@ -18,14 +18,15 @@
 			$err = "Email $user is already in use";
 			return false;
 		} else {
-			$err = "User added";
-			$insert = $dbconn->prepare("INSERT users (email, pword, salt) VALUES (:email, :pass, :salt);");
+			$insert = $dbconn->prepare("INSERT INTO users (email, pword, salt) VALUES (:email, :pass, :salt);");
 			$insert->execute(array(':email'=>$user, ':pass' => $pass, ':salt'=>$salt));
-			$_SESSION['email'] = $_POST['email'];
-            $select = $dbconn->prepare("SELECT users (uid) WHERE user =:user;");
+            
+			$select = $dbconn->prepare("SELECT uid FROM users WHERE email=:user");
             $select->execute(array(':user'=>$user));
-            $uid = $select->fetch();
-			$_SESSION['uid'] = $_POST['uid'];
+			$uid = $select->fetch();
+			$_SESSION['email'] = $_POST['email'];
+			$_SESSION['uid'] = $uid['uid'];
+			
 			return true;
 		}
 	}

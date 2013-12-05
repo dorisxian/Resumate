@@ -1,16 +1,16 @@
 <?php
 	session_start();
+	try {
+		include('php/connect.php');
+		// $dbname = 'resumate';
+		// $user = 'root';
+		// $pass = '';
+		// $dbconn = new PDO('mysql:host=localhost;dbname='.$dbname, $user, $pass);
+		// $dbconn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	} catch (Exception $e) {
+		$err = "Error: " . $e->getMessage();
+	}
 	if(isset($_GET['num'])) {
-		try {
-			include('php/connect.php');
-			// $dbname = 'resumate';
-			// $user = 'root';
-			// $pass = '';
-			// $dbconn = new PDO('mysql:host=localhost;dbname='.$dbname, $user, $pass);
-			// $dbconn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		} catch (Exception $e) {
-			$err = "Error: " . $e->getMessage();
-		}
 		$select = $dbconn->prepare("SELECT xmlid, rid FROM resumes WHERE uid=:uid");
 		$select->execute(array(":uid"=>$_SESSION['uid']));
 		$result = $select->fetchAll();
@@ -62,6 +62,9 @@
 				</li>
 				<li>
 					<a href="#addl-form"><i class="fa fa-heart fa-fw"></i>Other Information</a>
+				</li>
+				<li>
+					<a href="#style-picker"><i class="fa fa-file fa-fw"></i>Style Picker</a>
 				</li>
 			</ul>
 		</section><!-- @end #sidemenu -->
@@ -138,8 +141,19 @@
 					<p><label>Groups and Organizations</label><textarea name="groups" placeholder="Enter the organizations you are involved in"	><?php echo $load->groups ?></textarea></p>
 					<p><label>Languages</label><textarea name="languages" placeholder="Enter the languages you speak"							><?php echo $load->languages ?></textarea></p>
 				</div>
-				<input type="number" name="rid" value="1">
-				<input type="submit" value="Submit">
+				<?php 
+					$styles = $dbconn->prepare("SELECT * FROM styles WHERE 1");
+					$styles->execute();
+					$size = count($styles->fetchAll());
+				?>
+				<div id="style-picker" class="formblock hidden">
+					<?php for($index = 1; $index != $size + 1; $index++): ?>
+					<img src="<?php echo "./img/lib/" . $index . ".png" ?>" class="off">
+					<input type="hidden" name="rid" value="<?php echo $index ?>" class="value">
+					<img src="<?php echo "./img/lib/" . $index . "h.png" ?>" class="on">
+					<?php endfor; ?>
+					<input type="submit" value="Submit">
+				</div>
 			</form>
 		</section><!-- @end #form -->
 	</section><!-- @end #canvas -->

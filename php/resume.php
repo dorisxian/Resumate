@@ -57,7 +57,7 @@
 		</section>
 		<section class="body" id="objective">
 			<?php if(($load->obj) != ''): ?>		<h2 class="sectiontitle">Objective</h2>
-													<div id="statement"><?php echo $load->obj[0]; ?></div> 		<?php endif; ?>
+													<div id="obj"><?php echo $load->obj[0]; ?></div> 		<?php endif; ?>
 			<?php if(($load->profile) != ''): ?>	<h2 class="sectiontitle">Profile</h2>
 													<div id="profile"><?php echo $load->profile[0]; ?></div> 	<?php endif; ?>
 		</section>
@@ -104,17 +104,17 @@
 			</ul>
 			<?php else: ?>
 			<ul class="job">
-				<?php if(($load->type[$i]) != ''): ?>			<li class="wCompany"><?php echo $load->type[$i]; ?></li>				<?php endif; ?>
-				<?php if(($load->position[$i]) != ''): ?>		<li class="wTitle"><?php echo $load->position[$i]; ?></li>				<?php endif; ?>
+				<?php if(($load->type[$i]) != ''): ?>				<li class="wCompany"><?php echo $load->type[$i]; ?></li>				<?php endif; ?>
+				<?php if(($load->position[$i]) != ''): ?>			<li class="wTitle"><?php echo $load->position[$i]; ?></li>				<?php endif; ?>
 				<?php if(($load->workstartdate[$i]) != ''): ?>		
 				<div class="dates">
 					<li class="wStartDate"><?php echo $load->workstartdate[$i]; ?></li>											
 					<span>&nbsp;-&nbsp;</span>
-					<?php if(($load->workenddate[$i]) != ''): ?>	<li class="wEndDate"><?php echo $load->workenddate[$i]; ?></li>		<?php endif; ?>
+					<?php if(($load->workenddate[$i]) != ''): ?>	<li class="wEndDate"><?php echo $load->workenddate[$i]; ?></li>			<?php endif; ?>
 				</div>
 				<?php endif; ?>
-				<?php if(($load->workcity[$i]) != ''): ?>		<li class="wCity"><?php echo $load->workcity[$i]; ?></li>				<?php endif; ?>
-				<?php if(($load->workdescription[$i]) != ''): ?><li class="wDescription"><?php echo $load->workdescription[$i]; ?></li>	<?php endif; ?>
+				<?php if(($load->workcity[$i]) != ''): ?>			<li class="wCity"><?php echo $load->workcity[$i]; ?></li>				<?php endif; ?>
+				<?php if(($load->workdescription[$i]) != ''): ?>	<li class="wDescription"><?php echo $load->workdescription[$i]; ?></li>	<?php endif; ?>
 			</ul>
 			<?php endif; ?>
 			<?php endfor; ?>

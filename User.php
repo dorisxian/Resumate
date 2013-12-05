@@ -5,16 +5,10 @@
 		if (isset($_POST['login']) && $_POST['login'] == 'Sign In') {
 			include('php/login.php');
             login();
-			if(login()) {
-				//redirect the user to landing page
-			}
 		}
 		else if (isset($_POST['register']) && $_POST['register'] == 'Signup') {
 			include('php/register.php');
             register();
-			if(register()){
-				//redirect the user to landing page
-			}
 		}
 		else if (isset($_SESSION['email']) && isset($_POST['logout']) && $_POST['logout'] == 'Logout') {
 			include('php/logout.php');
@@ -25,9 +19,11 @@
 		$err = "Error: " . $e->getMessage();
 	}
 
-	include("php/fetchResumes.php");
-	$resumes = fetchResumes();
-	$index = 0;
+	if(isset($_SESSION['email'])) {
+		include("php/fetchResumes.php");
+		$resumes = fetchResumes();
+		$index = 0;
+	}
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +37,7 @@
 </head>
 <body>
 	<?php include('php/header.php'); ?>
-
+	<pre></pre>
     <?php if (isset($_SESSION['email'])): ?>
     <section id="canvas">
 		<section id="load">
@@ -58,7 +54,7 @@
 
 			<h3>Your Resume</h3>
 			<a class="new" href="NewResume.php"><img src="./img/file_new.png" alt="">Create a new resume</a>
-			<form id="resumes" method="post" action="php/load.php" onsubmit="return validate();">
+			<form id="resumes" method="post" action="php/load.php" onsubmit="return Validate();">
 				<?php foreach($resumes as $resume): ?>
 				<img src="<?php echo "./img/lib/" . $resume['rid'] . ".png" ?>" class="off">
 				<input type="hidden" name="num" value="<?php echo $index ?>" class="value">
@@ -86,7 +82,7 @@
 				<input type="submit" name="login" value="Sign In" class="thin"/>
 				<p class="change_link">Not a member yet?<a href="#register" class="toregister light"><i class="fa fa-plus-circle"></i>Join us</a></p>
 			</form>
-			<form id="register" class="hidden" action="User.php" method="post" onsubmit="return validate();">
+			<form id="register" class="hidden" action="User.php" method="post" onsubmit="return Validate();">
 				<h2 class="subtitle">Register</h2>
 				<p id="errorMessage" class="error"></p>
 				<div><i class="fa fa-envelope fa-fw"></i><input type="email" name="email" placeholder="Email" required></div>
