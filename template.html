@@ -1,80 +1,107 @@
 <html>
 	<head>
+		<meta charset=utf-8>
+		<meta name=viewport content="width=device-width, initial-scale=1">
+		<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Lusitana:400,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="template_1.css" media="all" />
 	</head>
 	<body>
-		<section id="header">
-			<ul id="basicInfo">
-				<li id="firstName">First</li>
-				<li id="lastName">Last</li>
-				<li id="phone">(123) 456-7890</li>
-				<li id="email">example@website.com</li>
-			</ul>
-			<ul id="addressInfo">
-				<li id="addressLine1">1 Full Adress Example</li>
-				<li id="addressLine2">2 Second Line</li>
-				<li id="city">Portland</li>
-				<li id="state">OR</li>
-				<li id="zip">99999</li>
-			</ul>
-			<ul id="additionalInfo">
-				<li id="website">example.com</li>
-			</ul>
-		</section>
-		<section class="body" id="objective">
-			<div id="statement">Objective:</div>
-			<div id="profile">An example profile, Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </div>
-		</section>
-		<section class="body" id="education">
-			<ul class="school">
-				<li class="sName">RPI</li>
-				<li class="sCity">Troy</li>
-				<li class="sCounty">USA</li>
-				<li class="sStartDate">December 2000</li>
-				<li class="sEndDate">December 2004</li>
-				<li class="sMajor">Major</li>
-				<li class="sMinor">Minor</li>
-				<li class="sGPA">GPA</li>
-			</ul>
-			<ul class="school">
-				<li class="sName">Not RPI</li>
-				<li class="sCity">Not Troy</li>
-				<li class="sCounty">USA</li>
-				<li class="sStartDate">December 2004</li>
-				<li class="sEndDate">December 2008</li>
-				<li class="sMajor">Major</li>
-				<li class="sMinor">Minor</li>
-				<li class="sGPA">GPA</li>
-			</ul>
-			<ul id="relevantCourseWork">
-				<li>
-					<div class="course">Course 1</div>
-					<div class="cDescription">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-				</li>
-				<li>
-					<div class="course">Course 2</div>
-					<div class="cDescription">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-				</li>
-			</ul>
-		</section>
-		<section class="body" id="work">
-			<ul class="job" id="currentJob">
-				<li class="wCompany">Company, inc.</li>
-				<li class="wTitle">Position</li>
-				<li class="wStartDate">December 2012</li>
-				<li class="wCity">Troy</li>
-				<li class="wDescription">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</li>
-			</ul>
-			<ul class="job">
-				<li class="wCompany">Place, inc.</li>
-				<li class="wTitle">Position</li>
-				<li class="wStartDate">December 2008</li>
-				<li class="wEndDate">December 2012</li>
-				<li class="wCity">Troy</li>
-				<li class="wDescription">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</li>
-			</ul>
-		</section>
-		<section class="body" id="skills">
-			??? doesn't look complete to me
-		</section>
+		<div id="inner">
+			<section id="header">
+				<ul id="basicInfo">
+					<li id="firstName" class="fn">John</li>
+					<li id="lastName" class="fn">Doe</li>
+					<li id="phone">(123) 456-7890</li>
+					<li id="email">example@email.com</li>
+				</ul>
+				<ul id="addressInfo">
+					<li id="addressLine1">102 Maple Street</li>,
+					<li id="addressLine2">Apt. 3</li></br>
+					<li id="city">Portland</li>,
+					<li id="state">OR</li>,
+					<li id="zip">99999</li>
+				</ul>
+				<ul id="additionalInfo">
+					<li id="website">www.example.com</li>
+				</ul>
+			</section>
+			<section class="body" id="objective">
+				<h2 class="sectiontitle">Objective</h2>
+				<p id="obj">Seeking an internship in the field of Computer Science.</p>
+				
+				<h2 class="sectiontitle">Profile</h2>
+				<ul id="profile">
+				    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, tempore?</li>
+				    <li>Eum, ipsum assumenda minima sed fugiat est tempora fugit nemo incidunt nulla. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+				</ul>
+			</section>
+			<section class="body" id="education">
+				<h2 class="sectiontitle">Education</h2>
+				<ul class="school">
+					<li class="sName">Rensselaer Polytechnic Institute (RPI)</li>|
+					<li class="sCity">Troy</li>,
+					<li class="sCounty">USA</li>
+					<div class="dates">
+					<li class="sStartDate">August 2004</li>
+					<span>&nbsp;-&nbsp;</span>
+					<li class="sEndDate">May 2008</li>
+					</div>
+					<li class="sMajor">Computer Science</li>
+					<li class="sMinor">Information Technology</li>
+					<li class="sGPA">3.8/4.0</li>
+				</ul>
+				<ul class="school">
+					<li class="sName">Not RPI</li>|
+					<li class="sCity">Not Troy</li>,
+					<li class="sCounty">USA</li>
+					<div class="dates">
+					<li class="sStartDate">September 2000</li>
+					<span>&nbsp;-&nbsp;</span>
+					<li class="sEndDate">December 2004</li>
+					</div>
+					<li class="sMajor">Major</li>
+					<li class="sMinor">Minor</li>
+					<li class="sGPA">GPA</li>
+				</ul>
+			</section>
+			<section class="body" id="work">
+				<h2 class="sectiontitle">Relevant Experience</h2>
+				<ul class="job" id="currentJob">
+					<li class="wTitle">Position</li>
+					<div class="dates">
+					<li class="wStartDate">December 2012</li>
+					<span>&nbsp;-&nbsp;</span>
+					<li class="wEndDate">Now</li>
+					</div>
+					<li class="wCompany">Company, inc.</li>
+					<li class="wCity">Troy</li>
+					<li class="wDescription">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</li>
+				</ul>
+				<ul class="job">
+					<li class="wTitle">Position</li>
+					<div class="dates">
+					<li class="wStartDate">December 2008</li>
+					<span>&nbsp;-&nbsp;</span>
+					<li class="wEndDate">December 2012</li>
+					</div>
+					<li class="wCompany">Place, inc.</li>
+					<li class="wCity">Troy</li>
+					<li class="wDescription">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</li>
+				</ul>
+			</section>
+			<section class="body" id="skills">
+				<div id="skill">
+					Example skill text. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+				</div>
+			</section>
+			<section class="body" id="addt-info">
+				<ul id="info">
+					<span id="int">Interests:</span><li id="interests">Sample interests listing. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.></li>
+					<span id="grp">Groups:</span><li id="groups">Groups involved in. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+					<span id="lang">Languages:</span><li id="language">Language text. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+				</ul>
+			</section>
+		</div>
 	</body>
 </html>

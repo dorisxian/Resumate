@@ -15,7 +15,7 @@
 	<?php include('php/header.php'); ?>
 	<section id="canvas">
 		<section id="load">
-			<form id="resumes" method="post" action="php/load.php">
+			<form id="resumes" method="post" action="php/load.php" onsubmit="return validate();">
 				<?php foreach($resumes as $resume): ?>
 				<img src="<?php echo "./img/lib/" . $resume['rid'] . ".png" ?>" class="off">
 				<input type="hidden" name="num" value="<?php echo $index ?>" class="value">
@@ -23,8 +23,8 @@
 				<?php $index++; ?>
 				<?php endforeach; ?>
 				<br/>
-				<input type="image" name="delete" src="./img/minus.png" value="Delete">
-				<input type="image" name="load" src="./img/open.png" value="Load">
+				<input type="image" name="delete" src="./img/delete.png" value="Delete">
+				<input type="image" name="load" src="./img/view.png" value="Load">
 				<input type="image" name="edit" src="./img/edit.png" value="Edit">
 			</form>
 		</section>
