@@ -71,9 +71,9 @@
 		
 		<section id="form">
 			<?php if(isset($_GET['num'])): ?>
-			<form method="POST" action="php/edit.php?num=<?php echo $_GET['num'] ?>">
+			<form method="POST" action="php/edit.php?num=<?php echo $_GET['num'] ?>" onsubmit="return validate();">
 			<?php else:?>
-			<form method="POST" action="php/newResume.php">
+			<form method="POST" action="php/newResume.php" onsubmit="return validate();">
 			<?php endif; ?>
 				<div id="basic-form" class="formblock">
 					<p><label>First Name</label><input type="text" name="fname" placeholder="Enter First Name"				value="<?php echo $load->fname ?>" ></p>

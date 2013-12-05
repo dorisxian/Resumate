@@ -24,7 +24,6 @@ function on() {
 function validate() {
 	for( var i = 0; i < $(".value").length; i++) {
 		if( !$($(".value")[i] ).attr("disabled")) {
-			alert($(obj).attr("disabled"));
 			return true;
 		}
 	}

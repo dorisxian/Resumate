@@ -105,3 +105,13 @@ function on() {
 	$( $(".on").get(index) ).show();
 	$( $(".value").get(index) ).removeAttr("disabled");
 }
+ 
+function validate() {
+	for( var i = 0; i < $(".value").length; i++) {
+		if( !$($(".value")[i] ).attr("disabled")) {
+			return true;
+		}
+	}
+	alert("Pick a style for the resume!");
+	return false;
+}
