@@ -5,7 +5,7 @@
 	}
 ?>
 <header>
-	<img id="logo" src="img/logo.png" alt="">
+	<a href="index.php"><img id="logo" src="img/logo.png" alt=""></a>
 	<h1>Resumate</h1>
 </header>
 
