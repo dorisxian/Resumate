@@ -15,8 +15,6 @@
 			    <p><input name="email" type="email" placeholder="Email" required></p>
 			    <p><input name="subject" type="text" placeholder="Subject"></p>
 			    <p><textarea name="message" placeholder="Message" required></textarea></p>
-		        <input id="checkbox_send" type="checkbox">
-        		<label for="checkbox_send" class="checkbox_label checkbox">Reply to my email</label>
 			    <input id="send" name="send" type="submit" value="Send" class="thin">
 			</form>	
 		</section>
