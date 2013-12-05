@@ -17,9 +17,9 @@
 		<section id="load">
 			<form id="resumes" method="post" action="php/load.php" onsubmit="return validate();">
 				<?php foreach($resumes as $resume): ?>
-				<img src="<?php echo "./img/lib/" . $resume['rid'] . ".png" ?>" class="off">
+				<img src="<?php echo "./img/lib/" . $resume['rid'] . ".png" ?>" class="off thumbnail">
 				<input type="hidden" name="num" value="<?php echo $index ?>" class="value">
-				<img src="<?php echo "./img/lib/" . $resume['rid'] . "h.png" ?>" class="on">
+				<img src="<?php echo "./img/lib/" . $resume['rid'] . "h.png" ?>" class="on thumbnail">
 				<?php $index++; ?>
 				<?php endforeach; ?>
 				<br/>

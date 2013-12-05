@@ -171,6 +171,7 @@ input[type=checkbox]{
 	font-weight: 300;
 	width: 200px;
 	color: white;
+	margin: 30px 10px;
 }
 .button{
 	width: 112px;
@@ -199,5 +200,8 @@ input[type=checkbox]{
 
 /* @end Button*/
 
+.thumbnail{
+	width: 222px;
+}
 
 /* @end New Resume Page */

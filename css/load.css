@@ -48,3 +48,6 @@ input[type=image]:hover{
 	margin: 0 5px;
 	vertical-align: text-top;
 }
+.thumbnail{
+	width: 222px;
+}

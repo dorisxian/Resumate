@@ -7,7 +7,6 @@
 	background: -ms-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* IE10+ */
 	background: linear-gradient(to bottom,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
-
 }
 #main{
 	-webkit-border-radius: 8px;
@@ -25,8 +24,8 @@ img{
 	width: 100%;
 }
 .image{
-	margin-left: 10%;
-	width: 90%;
+	margin-left: 17%;
+	width: 80%;
 	position: relative;
 	top: -30px;
 }
