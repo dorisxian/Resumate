@@ -1,5 +1,5 @@
 <?php
-
+global $dbconn;
 $dbname = 'resumate';
 $user = 'root';
 $pass = 'root';
