@@ -66,7 +66,7 @@
 .formblock.hidden {
 	display: none;
 }
-#form input, textarea, select{
+#form input:not([type=checkbox]), textarea, select{
 	padding: 5px;
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
@@ -116,7 +116,7 @@ label{
 		float: none;
 		text-align: left;
 	}
-	#form input, textarea, select{
+	#form input:not([type=checkbox]), textarea, select{
 		width: 95%;
 		margin-left: 0;
 	}
@@ -131,6 +131,77 @@ label{
 div.ui-datepicker{ 
 	font-size: 13px;
 }
+.ed_fields, .w_fields{
+	border-bottom: 2px solid #FC605B;
+	padding-bottom: 30px;
+	margin-bottom: 40px;
+}
 /* @end Form Content*/
+
+input[type=checkbox]{
+	margin: 10px 15px;
+}
+@media (max-width: 1000px){
+	.check{
+		padding-top: 10px;
+		margin: 0; 
+		padding-left: 0;
+	}
+	.check label{
+		display: inline;
+	}
+	input[type=checkbox]{
+		margin: 0px 15px;
+	}
+}
+
+/* Button */
+#form input[type=submit], .button{
+    border: 1px solid #FC605B;
+    -moz-border-radius:7px;
+    -webkit-border-radius:7px;
+    border-radius:7px;
+	background-color: transparent;
+	padding: 8px;
+}
+#form input[type=submit]{
+	background-color: #FC605B;
+	font-size: 18px;
+	font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma","Arial", sans-serif; 
+	font-weight: 300;
+	width: 200px;
+	color: white;
+	margin: 30px 10px;
+}
+.button{
+	width: 112px;
+	font-weight: 400;
+	color: inherit;
+	display: inline-block;
+	text-align: center;
+}
+.button .fa-fw{
+	margin-right: 5px;
+}
+.button:focus{
+	outline: none;
+}
+.button:hover{
+	color: #2B2A27;
+	background-color: #B4EBFF;
+	cursor: pointer;
+}
+#form input[type=submit]:hover{
+	color: white;
+	background-color: #0FBBC3;
+	cursor: pointer;
+	border-color: #0FBBC3;
+}
+
+/* @end Button*/
+
+.thumbnail{
+	width: 222px;
+}
 
 /* @end New Resume Page */

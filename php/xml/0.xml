@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<info>
+	<fname></fname>
+	<lname></lname>
+	<address1></address1>
+	<address2></address2>
+	<city></city>
+	<state></state>
+	<zip></zip>
+	<phone></phone>
+	<email></email>
+	<website></website>
+	<obj></obj>
+	<profile></profile>
+	<schoolname></schoolname>
+	<schoolcity></schoolcity>
+	<schoolcountry></schoolcountry>
+	<schoolstartdate></schoolstartdate>
+	<schoolenddate></schoolenddate>
+	<maj></maj>
+	<min></min>
+	<gpa></gpa>
+	<type></type>
+	<position></position>
+	<workstartdate></workstartdate>
+	<workenddate></workenddate>
+	<workcity></workcity>
+	<workdescription></workdescription>
+	<skills></skills>
+	<interests></interests>
+	<groups></groups>
+	<languages></languages>
+	<rid></rid>
+</info>

@@ -1,0 +1,73 @@
+body{
+	font-family: 'Lusitana', "Times New Roman", Georgia, Serif;
+	color: #2B2A27;
+	width: 85%;
+	margin: auto;
+	background: white;
+	font-size: 16px;
+}
+#inner{
+	padding: 35px;
+}
+li{
+	list-style: none;
+	line-height: 24px;
+}
+ul{
+	padding-left: 0;
+}
+#header{
+	display: block;
+	text-align: center;
+	padding-bottom: 10px;
+	border-bottom: double 4px;
+}
+#firstName, #lastName{
+	display: inline-block;
+	margin: 10px 5px;
+}
+.fn{
+	font-weight: 700;
+	font-size: 50px;
+	font-variant: small-caps;
+	padding-bottom: 20px;
+}
+#header ul{
+	margin: 0;
+}
+#addressInfo li{
+	display: inline-block;
+}
+#email, #website{
+	color: #3C599C;
+	text-decoration: none;
+	cursor: pointer;
+}
+#email:hover, #website:hover{
+	text-decoration: underline;
+}
+.sName, .sCity, .sCounty, .sStartDate, .sEndDate, .wStartDate, .wEndDate{
+	display: inline-block;
+}
+.sName, .wTitle{
+	margin-right: 15px;
+	font-weight: 600;
+	color: #666666;
+}
+.sCity{
+	margin-left: 8px;
+}
+.dates{
+	float: right;
+	font-size: 12pt;
+	text-align: right;
+}
+.wCompany{
+	color: #666666;
+	font-weight: 300;
+}
+.job:not(:last-child){
+	border-bottom: 2px dotted #89867E;
+	padding-bottom: 30px;
+	margin: 30px 0;
+}

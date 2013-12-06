@@ -35,14 +35,14 @@ $(document).ready(function() {
   });
   
   
-   $("#startDatepicker,#endDatepicker").datepicker({
+   $(".startDatepicker,.endDatepicker").datepicker({
     changeMonth: true,
     changeYear: true,
     dateFormat: 'MM yy'
   });
 
 
- $('#deleteSchool').hide(); 
+ $('#deleteSchool').hide();
 
   $('#addSchool').click(function(e) {
     $("#deleteSchool").show();
@@ -63,7 +63,7 @@ $(document).ready(function() {
   });
   
   
-$('#deleteWork').hide(); 
+$('#deleteWork').hide();
   $('#addWork').click(function(w) {
     $("#deleteWork").show();
     $("#work-form").append($("#work-form div.w_fields:eq(0)").clone(true));
@@ -77,8 +77,41 @@ $('#deleteWork').hide();
 
   $('#deleteWork').click(function() {
     $("#work-form div.w_fields:last").remove();
-    $("#deleteWork").hide();
+    if ($("#work-form").children("div").length ==1) {
+       $("#deleteWork").hide();
+    };
   });
   
 
+  $(".on").hide().click(off);
+  $(".off").click(on);
+  $(".value").attr("disabled", "disabled");
 });
+
+
+function off() {
+	$(this).hide();
+	var index = $(".on").index(this);
+	$( $(".value").get(index) ).attr("disabled","disabled")
+	$( $(".off").get(index) ).show();
+}
+
+function on() {
+	$(".on").hide();
+	$(".off").show();
+	$(".value").attr("disabled", "disabled");
+	var index = $(".off").index(this);
+	$(this).hide();
+	$( $(".on").get(index) ).show();
+	$( $(".value").get(index) ).removeAttr("disabled");
+}
+ 
+function validate() {
+	for( var i = 0; i < $(".value").length; i++) {
+		if( !$($(".value")[i] ).attr("disabled")) {
+			return true;
+		}
+	}
+	alert("Pick a style for the resume!");
+	return false;
+}
