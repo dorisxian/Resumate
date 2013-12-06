@@ -1,12 +1,12 @@
 <?php
 	session_start();
 	try {
-		//include('php/connect.php');
-		$dbname = 'resumate';
-		$user = 'root';
-		$pass = '';
-		$dbconn = new PDO('mysql:host=localhost;dbname='.$dbname, $user, $pass);
-		$dbconn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		include('php/connect.php');
+		// $dbname = 'resumate';
+		// $user = 'root';
+		// $pass = '';
+		// $dbconn = new PDO('mysql:host=localhost;dbname='.$dbname, $user, $pass);
+		// $dbconn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	} catch (Exception $e) {
 		$err = "Error: " . $e->getMessage();
 	}
@@ -151,6 +151,7 @@
 					<input type="hidden" name="rid" value="<?php echo $index ?>" class="value">
 					<img src="<?php echo "./img/lib/" . $index . "h.png" ?>" class="on thumbnail">
 					<?php endfor; ?>
+					<br/>
 					<input type="submit" value="Submit">
 				</div>
 			</form>
