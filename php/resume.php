@@ -22,11 +22,20 @@
 		$xmlid = $result[$_POST['num']]['xmlid'];
 		$rid = $result[$_POST['num']]['rid'];
 	}
-	$load = simplexml_load_file("xml/".$xmlid.".xml");
+	ini_set('allow_url_fopen ','ON');
+	$url = "xml/".$xmlid.".xml";
+	$temp = file_get_contents($url);
+ 	$load = simplexml_load_string($temp);
+
+	//$load = simplexml_load_file("xml/".$xmlid.".xml");
 	
 	$cssGet = $dbconn->prepare("SELECT css FROM styles WHERE rid=:rid");
 	$cssGet->execute(array(':rid' => $rid));
-	$css = $cssGet->fetchAll()[0]['css'];
+	//$css = $cssGet->fetchAll()[0]['css'];
+
+	$css = $cssGet->fetchAll();
+	$css = $css[0]['css'];
+
 ?>
 <html>
 	<head>

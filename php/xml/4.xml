@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<info>
+	<fname>Doris</fname>
+	<lname>Xian</lname>
+	<address1>100 McChesney Ave.</address1>
+	<address2>Apt. F-10</address2>
+	<city>Troy</city>
+	<state>New York</state>
+	<zip>12180</zip>
+	<phone>3476146660</phone>
+	<email>dorisxian@gmail.com</email>
+	<website></website>
+	<obj></obj>
+	<profile></profile>
+	<skills></skills>
+	<interests></interests>
+	<groups></groups>
+	<languages></languages>
+	<rid>3</rid>
+</info>

@@ -2,11 +2,6 @@
 	session_start();
 	try {
 		include('php/connect.php');
-		// $dbname = 'resumate';
-		// $user = 'root';
-		// $pass = '';
-		// $dbconn = new PDO('mysql:host=localhost;dbname='.$dbname, $user, $pass);
-		// $dbconn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	} catch (Exception $e) {
 		$err = "Error: " . $e->getMessage();
 	}
@@ -16,6 +11,10 @@
 		$result = $select->fetchAll();
 		$xmlid = $result[$_GET['num']]['xmlid'];
 		$rid = $result[$_GET['num']]['rid'];
+		// ini_set('allow_url_fopen ','ON');
+		// $url = "php/xml/".$xmlid.".xml";
+		// $temp = file_get_contents($url);
+		// $load = simplexml_load_string($temp);
 		$load = simplexml_load_file("php/xml/".$xmlid.".xml");
 	} else {
 		$rid = 1;
@@ -164,3 +163,4 @@
 
 </body>
 </html>
+                                                        

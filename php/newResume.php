@@ -13,10 +13,21 @@
 		$insert = $dbconn->prepare("INSERT INTO resumes (uid, rid) VALUES (:uid, :rid)");
 		$insert->execute(array(':uid' => $_SESSION['uid'], ':rid' => $_POST['rid']));
 		
-		// get the last xml id for the user(the one I just inserted
-		$select = $dbconn->prepare("SELECT xmlid FROM resumes WHERE uid=:uid");
-		$select->execute(array(":uid"=>$_SESSION['uid']));
-		$xmlid = end($select->fetchAll())['xmlid'];
+		try { 
+        	$dbconn->beginTransaction();
+
+			// get the last xml id for the user(the one I just inserted
+			$select = $dbconn->prepare("SELECT xmlid FROM resumes WHERE uid=:uid");
+			$select->execute(array(":uid"=>$_SESSION['uid']));
+
+			$dbconn->commit(); 
+	        $xmlid = $dbconn->lastInsertId();
+	    } catch(PDOExecption $e) { 
+        	$dbconn->rollback(); 
+        	print "Error: " . $e->getMessage() . "</br>";
+    	}
+
+		//$xmlid = end($select->fetchAll())['xmlid'];
 		
 		require('save.php');
 		

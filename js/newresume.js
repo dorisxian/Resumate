@@ -59,7 +59,7 @@ $(document).ready(function() {
     $("#education-form div.ed_fields:last").remove();
     if ($("#education-form").children("div").length ==1) {
        $("#deleteSchool").hide();
-    };
+    }
   });
   
   
@@ -79,7 +79,7 @@ $('#deleteWork').hide();
     $("#work-form div.w_fields:last").remove();
     if ($("#work-form").children("div").length ==1) {
        $("#deleteWork").hide();
-    };
+    }
   });
   
 
@@ -92,7 +92,7 @@ $('#deleteWork').hide();
 function off() {
 	$(this).hide();
 	var index = $(".on").index(this);
-	$( $(".value").get(index) ).attr("disabled","disabled")
+	$( $(".value").get(index) ).attr("disabled","disabled");
 	$( $(".off").get(index) ).show();
 }
 
